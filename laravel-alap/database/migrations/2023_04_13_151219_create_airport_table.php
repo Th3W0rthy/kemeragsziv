@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 255);
             $table->string('iata', 3);
+            $table->string('time_zone', 9);
             $table->string('phone', 12);
             $table->string('email', 255);
             $table->string('continent', 25);
