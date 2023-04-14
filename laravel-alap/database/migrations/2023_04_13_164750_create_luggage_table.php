@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('tag', 255);
             $table->char('size');
-            $table->integer('location');
             $table->integer('price');
             //$table->timestamps();
         });
