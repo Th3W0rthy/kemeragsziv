@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('name', 255);
             $table->string('phone', 12);
             $table->string('email', 255);
-            $table->string('iata', 2);
+            $table->string('iata', 2)->nullable();
+            $table->string('icao', 3)->nullable();
             //$table->timestamps();
         });
     }
