@@ -15,14 +15,13 @@ return new class extends Migration
     {
         Schema::create('flights', function (Blueprint $table) {
             $table->id();
-            $table->integer('luggage_id');
-            $table->integer('airport_id');
+            $table->string('number',10);
             $table->dateTimeTz('departure');
             $table->dateTimeTz('arrival');
+            $table->integer('departure_airport');
             $table->integer('arrival_airport');
-            $table->integer('arrival_airport');
-            $table->integer('airline');
-            $table->integer('aircraft');
+            $table->integer('airline_id');
+            $table->integer('aircraft_id');
             $table->integer('cost');
             $table->integer('basic_price');
             //$table->timestamps();
