@@ -18,8 +18,9 @@ return new class extends Migration
             $table->string('name', 255);
             $table->string('iata', 3);
             $table->string('time_zone', 9);
-            $table->string('phone', 12);
-            $table->string('email', 255);
+            $table->string('phone', 12)->nullable();
+            $table->string('email', 255)->nullable();
+            $table->string('website', 255)->nullable();
             $table->string('continent', 25);
             $table->string('country', 50);
             $table->string('settlement', 255);
