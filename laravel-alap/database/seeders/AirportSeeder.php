@@ -15,7 +15,7 @@ class AirportSeeder extends Seeder
      */
     public function run()
     {
-        DB::table("airport")->insert([
+        DB::table("airports")->insert([
             [
                 'name' => "Ferihegy International Airport",
                 'iata' => "BUD",
@@ -27,11 +27,11 @@ class AirportSeeder extends Seeder
                 'settlement' => "Budapest",
             ],
             [
-                'name' => "Heathrow",
-                'iata' => "LHR",
+                'name' => "Stansted",
+                'iata' => "STN",
                 'time_zone' => "UTC+00:00",
                 'phone' => "+44123342345",
-                'email' => "airport@lhr.uk",
+                'email' => "airport@stn.uk",
                 'continent' => "Europe",
                 'country' => "United Kingdom",
                 'settlement' => "London",
@@ -44,7 +44,7 @@ class AirportSeeder extends Seeder
                 'email' => "aeroport@tgm.ro",
                 'continent' => "Europa",
                 'country' => "Romania",
-                'settlement' => "Targu Mures",
+                'settlement' => "Tirgu Mures",
             ],
             [
                 'name' => "Frankfurt Airport",
