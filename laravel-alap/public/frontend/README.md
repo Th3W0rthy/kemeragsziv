@@ -1,35 +1,80 @@
-# frontend
+# Vue alap | 2023.3
 
-This template should help get you started developing with Vue 3 in Vite.
+> Az alap tartalmaz minden olyan csomagot amely az órai feladatok elkészítéséhez szükséges.
 
-## Recommended IDE Setup
+## Tartalom {#content}
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- [Tartalom](#content)
+- [Node és a Vite kezelése](#vite)
+- [Mappaszerkezet](#directory)
+- [Tesztelés](#testing)
 
-## Customize configuration
+## Node és a Vite kezelése {#vite}
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+### Telepítés
 
-## Project Setup
+Első indítás alkalmával:
 
-```sh
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+Egyéb csomagok telepítése:
 
-```sh
+```bash
+npm install <csomag_neve>
+```
+
+Fejlesztői csomagok telepítése:
+
+```bash
+npm install --save-dev <csomag_neve>
+```
+
+### Fejlesztői szerver indítás
+
+A fejlesztői szervet a következő paranccsal tudod elnidítani. Ezt követően a jelzett linken éred el a szervert.
+
+```bash
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Közzétenni kívánt verzió előállítása
 
-```sh
+A következő parancs futtatásával egy olyan mappát állít elő a Vite, amit fel tudsz tölteni egy statikus tárhelyre (Pl. [Vercel](https://vercel.com/), [Netlify](https://www.netlify.com/)), ezzel elérhetővé téve az elkészült oldaladat. Az elkészült fájlokat a `dist` könyvtárban találod.
+
+```bash
 npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+Ahhoz, hogy ellenőrizni tudd, hogy helyesen működik az alkalmazásod, a következő paranccsal egy olyan szervert tudsz elindítani, ami az elkészült fájlokat mutatja meg neked. Ekkor már fejlesztői eszközök nem fognak működni az oldalon.
 
-```sh
-npm run test:unit
+```bash
+npm run preview
+```
+
+## Mappaszerkezet {#directory}
+
+- `components`: Újrahasnosítható komponensek
+  - `bootstrap`: Bootstrap elemek alapján készült komponensek
+  - `layout`: Az olal elrendezéséhez tartozó komponensek (Navbar, Footer)
+- `pages`: Az oldalakat tartalmazó komponensek
+- `router`: Routerhez tartozó scriptek
+  - `guards`: Router Guardokat tartalmazó scriptek
+- `stores`: Pinia tárolók
+- `test`: Unit tesztek
+- `utils`: Kiegészítű scriptek, pl.: Axios
+
+## Tesztelés {#testing}
+
+A következő parancs segítségével le tudod futtatni a unit teszteket a projektben és ezek sikerességét egy megnyiló oldaon tudod megtekinteni.
+
+```bash
+npm run test
+```
+
+A következő parancs a teszt lefedettségét fogja ellenőrizni neked:
+
+```bash
+npm run test:coverage
 ```
