@@ -27,7 +27,7 @@ return new class extends Migration
             $table->integer('postcode');
             $table->string('settlement', 255);
             $table->string('address', 255);
-            $table->integer('tax_number');
+            $table->integer('tax_number')->nullable();
             $table->integer('price');
             $table->integer('seat_id');
             $table->timestamps('');
