@@ -17,10 +17,28 @@ class LuggageSeeder extends Seeder
     {
         DB::table("luggages")->insert([
             [
-                
+                'ticket_id' => "1",
+                'tag' => "",
+                'size' => "M",
+                'price' => "10000",
             ],
             [
-                
+                'ticket_id' => "2",
+                'tag' => "",
+                'size' => "M",
+                'price' => "10000",
+            ],
+            [
+                'ticket_id' => "3",
+                'tag' => "",
+                'size' => "M",
+                'price' => "10000",
+            ],
+            [
+                'ticket_id' => "3",
+                'tag' => "",
+                'size' => "L",
+                'price' => "20000",
             ],
         ]);
     }
