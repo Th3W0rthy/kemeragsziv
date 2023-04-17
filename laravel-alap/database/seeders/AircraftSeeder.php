@@ -32,11 +32,6 @@ class AircraftSeeder extends Seeder
                 'manufacturer' => "Airbus",
                 'model' => "A321 Passenger",
             ],
-            [
-                'airline_id' => "4",
-                'manufacturer' => "Airbus",
-                'model' => "A321 Passenger",
-            ]
         ]);
     }
 }
