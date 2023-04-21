@@ -10,7 +10,7 @@ class Airline extends Model
     protected $fillable = ['name','phone','email','website','iata','icao'];
     public $timestamps = false;
 
-    public function aircrafts()
+    public function aircraft()
     {
         return $this->belongsTo(Aircraft::class);
     }
