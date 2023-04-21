@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('classes_aircraft', function (Blueprint $table) {
             //$table->id();
-            $table->foreignId('class_id');
-            $table->foreignId('aircraft_id');
+            $table->foreignId('class_id')->constrained("classes");
+            $table->foreignId('aircraft_id')->constrained("aircrafts");
             //$table->timestamps();
         });
     }
