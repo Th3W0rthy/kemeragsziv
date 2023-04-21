@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('luggages', function (Blueprint $table) {
             $table->id();
-            $table->integer('ticket_id');
+            $table->foreignId('ticket_id');
             $table->string('tag', 255);
             $table->char('size');
             $table->integer('price');
