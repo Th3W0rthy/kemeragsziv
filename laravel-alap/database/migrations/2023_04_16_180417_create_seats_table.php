@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('seats', function (Blueprint $table) {
             $table->id();
-            $table->integer('aircraft_id');
-            $table->integer('class_id');
+            $table->foreignId('aircraft_id');
+            $table->foreignId('class_id');
             $table->integer('seat_row');
             $table->integer('seat_col');
             //$table->timestamps();
