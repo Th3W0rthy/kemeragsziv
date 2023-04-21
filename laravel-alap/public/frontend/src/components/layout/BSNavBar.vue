@@ -17,10 +17,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <router-link class="nav-link active" aria-current="page" to="/">Home</router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <router-link class="nav-link" to="/Flights" >Flights</router-link>
             </li>
             <li class="nav-item dropdown">
               <a
@@ -45,20 +45,7 @@
               <a class="nav-link disabled">Disabled</a>
             </li>
           </ul>
-            <div class="me-2">
-              <select v-model="$i18n.locale" @change="onChange($i18n.locale)" class="form-select">
-                  <option v-for="locale in $i18n.availableLocales" :value="locale">{{locale}}</option>
-              </select>
-            </div>
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
             <button class="btn btn-outline-light" type="submit">Search</button>
-          </form>
         </div>
       </div>
     </nav>

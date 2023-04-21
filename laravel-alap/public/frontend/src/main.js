@@ -4,7 +4,8 @@ import { router } from '@/router/index.js'
 import App from '@/App.vue'
 import BSAlert from '@/components/bootstrap/BSAlert.vue'
 import { createI18n } from 'vue-i18n'
-
+import "bootstrap"
+import "bootstrap/dist/css/bootstrap.min.css"
 import hu from '@/locales/hu.mjs'
 import en from '@/locales/en.mjs'
 
