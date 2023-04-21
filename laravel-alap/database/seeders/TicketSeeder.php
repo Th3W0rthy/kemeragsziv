@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class TicketsSeeder extends Seeder
+class TicketSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -25,11 +25,11 @@ class TicketsSeeder extends Seeder
                 'email' => "tesztelek@gmail.com",
                 'phone' => "+36305435435",
                 'billing_name' => "Teszt Elek",
-                'counrty' => "Hungary",
+                'country' => "Hungary",
                 'postcode' => "2234",
                 'settlement' => "Maglód",
                 'address' => "Kis utca 14",
-                'tax_number' => "",
+                'tax_number' => null,
                 'price' => "25000",
                 'seat_id' => "1",
             ],
@@ -42,11 +42,11 @@ class TicketsSeeder extends Seeder
                 'email' => "tesztelekne@gmail.com",
                 'phone' => "+36312343456",
                 'billing_name' => "Teszt Elekné",
-                'counrty' => "Hungary",
+                'country' => "Hungary",
                 'postcode' => "2234",
                 'settlement' => "Maglód",
                 'address' => "Kis utca 14",
-                'tax_number' => "",
+                'tax_number' => null,
                 'price' => "25000",
                 'seat_id' => "2",
             ],
@@ -59,11 +59,11 @@ class TicketsSeeder extends Seeder
                 'email' => "vasszoltan@gmail.com",
                 'phone' => "+36201234342",
                 'billing_name' => "Vass Zoltán",
-                'counrty' => "Hungary",
+                'country' => "Hungary",
                 'postcode' => "2233",
                 'settlement' => "Ecser",
                 'address' => "Petőfi utca 111/b",
-                'tax_number' => "",
+                'tax_number' => null,
                 'price' => "50000",
                 'seat_id' => "3",
             ],
