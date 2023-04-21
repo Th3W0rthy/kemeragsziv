@@ -29,7 +29,7 @@ return new class extends Migration
             $table->string('address', 255);
             $table->integer('tax_number')->nullable();
             $table->integer('price');
-            $table->integer('seat_id');
+            $table->foreignId('seat_id');
             $table->timestamps('');
         });
     }
