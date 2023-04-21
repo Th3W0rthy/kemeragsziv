@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('luggages_logs', function (Blueprint $table) {
             $table->id();
-            $table->integer('luggage_id');
-            $table->integer('airport_id');
+            $table->foreignId('luggage_id');
+            $table->foreignId('airport_id');
             $table->timestamps();
         });
     }

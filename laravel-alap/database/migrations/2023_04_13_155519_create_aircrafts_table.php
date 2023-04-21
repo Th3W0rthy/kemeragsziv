@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('aircrafts', function (Blueprint $table) {
             $table->id();
-            $table->integer('airline_id');
+            $table->foreignId('airline_id');
             $table->string('manufacturer', 255);
             $table->string('model', 50);
             //$table->timestamps();
