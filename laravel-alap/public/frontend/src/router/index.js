@@ -11,6 +11,14 @@ export const router = createRouter({
         requiresAuth: false,
         title: 'Főoldal'
       }
+    },
+    {
+      path:'/login',
+      name: 'Login',
+      component: ()=> import('@/pages/LoginPage.vue'),
+      meta:{
+          title:'Login'
+      }
     }
   ]
 })

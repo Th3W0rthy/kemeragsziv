@@ -8,8 +8,11 @@ import { createI18n } from 'vue-i18n'
 import hu from '@/locales/hu.mjs'
 import en from '@/locales/en.mjs'
 
-import 'bootstrap'
+
 import '@/assets/app.scss'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap'
+import {router} from './router/index'
 
 const messages = { hu, en }
 
