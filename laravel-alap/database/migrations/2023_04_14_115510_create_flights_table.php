@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('number',10);
             $table->dateTimeTz('departure');
             $table->dateTimeTz('arrival');
-            $table->integer('departure_airport');
-            $table->integer('arrival_airport');
-            $table->integer('airline_id');
-            $table->integer('aircraft_id');
+            $table->foreignId('departure_airport');
+            $table->foreignId('arrival_airport');
+            $table->foreignId('airline_id');
+            $table->foreignId('aircraft_id');
             $table->integer('cost');
             $table->integer('basic_price');
             //$table->timestamps();
