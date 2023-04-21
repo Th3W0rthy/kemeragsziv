@@ -15,7 +15,7 @@ class ClassSeeder extends Seeder
      */
     public function run()
     {
-        DB::table("airports")->insert([
+        DB::table("classes")->insert([
             [
                 'class' => "A",
             ],
