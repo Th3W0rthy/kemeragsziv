@@ -12,12 +12,12 @@ class Airport extends Model
 
     public function luggages_logs()
     {
-        return $this->belongsTo(Luggage_log::class);
+        return $this->hasMany(Luggage_log::class);
     }
 
     public function flights()
     {
-        return $this->belongsTo(Flight::class);
-        return $this->belongsTo(Flight::class);
+        return $this->hasMany(Flight::class);
+        return $this->hasMany(Flight::class);
     }
 }
