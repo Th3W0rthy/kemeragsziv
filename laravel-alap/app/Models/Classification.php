@@ -10,13 +10,13 @@ class Classification extends Model
     protected $fillable = ['class'];
     public $timestamps = false;
 
+    public function aircrafts()
+    {
+        return $this->belongsToMany(Aircraft::class, "classes_aircrafts");
+    }
+
     public function seats()
     {
         return $this->belongsTo(Seat::class);
-    }
-
-    public function classes_aircrafts()
-    {
-        return $this->belongsToMany(Class_aircraft::class);
     }
 }

@@ -21,24 +21,24 @@ class Class_aircraftSeeder extends Seeder
                 'aircraft_id' => "1",
             ],
             [
+                'class_id' => "2",
+                'aircraft_id' => "1",
+            ],
+            [
                 'class_id' => "1",
                 'aircraft_id' => "2",
             ],
             [
                 'class_id' => "2",
-                'aircraft_id' => "1",
+                'aircraft_id' => "2",
+            ],
+            [
+                'class_id' => "1",
+                'aircraft_id' => "3",
             ],
             [
                 'class_id' => "2",
-                'aircraft_id' => "2",
-            ],
-            [
-                'class_id' => "3",
-                'aircraft_id' => "1",
-            ],
-            [
-                'class_id' => "3",
-                'aircraft_id' => "2",
+                'aircraft_id' => "3",
             ],
         ]);
     }

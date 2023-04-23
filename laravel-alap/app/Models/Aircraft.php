@@ -10,23 +10,23 @@ class Aircraft extends Model
     protected $fillable = ['airline_id','manufacturer','model'];
     public $timestamps = false;
 
-    public function airlines()
+    public function classes()
     {
-        return $this->hasMany(Airline::class);
+        return $this->belongsToMany(Classification::class, "classes_aircrafts");
     }
 
-    public function classes_aircrafts()
-    {
-        return $this->belongsTo(Class_aircraft::class);
-    }
-
-    public function seats()
+    public function seat()
     {
         return $this->belongsTo(Seat::class);
     }
 
-    public function flights()
+    public function flight()
     {
         return $this->belongsTo(Flight::class);
+    }
+
+    public function airline()
+    {
+        return $this->belongsTo(Airline::class);
     }
 }
