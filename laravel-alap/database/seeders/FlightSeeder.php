@@ -18,8 +18,8 @@ class FlightSeeder extends Seeder
         DB::table("flights")->insert([
             [
                 'number' => "W60001",
-                'departure' => "2023.04.26 09:00",
-                'arrival' => "2023.04.26 10:05",
+                'departure' => "2023-04-26 09:00:00",
+                'arrival' => "2023-04-26 10:05:00",
                 'departure_airport' => "1",
                 'arrival_airport' => "3",
                 'airline_id' => "1",
@@ -30,8 +30,8 @@ class FlightSeeder extends Seeder
             ],
             [
                 'number' => "FR0001",
-                'departure' => "2023.04.26 09:15",
-                'arrival' => "2023.04.26 11:50",
+                'departure' => "2023-04-26 09:15:00",
+                'arrival' => "2023-04-26 11:50:00",
                 'departure_airport' => "1",
                 'arrival_airport' => "2",
                 'airline_id' => "2",
