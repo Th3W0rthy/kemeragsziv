@@ -22,6 +22,12 @@
             <li class="nav-item">
               <router-link class="nav-link" to="/Flights" >Flights</router-link>
             </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/Login" >Login</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/Registration" >Registration</router-link>
+            </li>
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
