@@ -24,6 +24,7 @@ return new class extends Migration
             $table->foreignId('aircraft_id');
             $table->integer('cost');
             $table->integer('basic_price');
+            $table->integer('ground_handler',255);
             //$table->timestamps();
         });
     }
