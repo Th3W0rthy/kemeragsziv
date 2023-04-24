@@ -9,12 +9,12 @@
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <Field type="text" name="password" id="password" class="form-control" rules="required"/> 
+                <Field type="password" name="password" id="password" class="form-control" rules="required"/> 
                 <ErrorMessage name="password" as="div" class="alert alert-danger m-1"/>
             </div>
             <div class="form-group">
                 <label for="password_confirmation">Again password</label>
-                <Field type="text" name="password_confirmation" id="password_confirmation" class="form-control" rules="required"/> 
+                <Field type="password" name="password_confirmation" id="password_confirmation" class="form-control" rules="required"/> 
                 <ErrorMessage name="password_confirmation" as="div" class="alert alert-danger m-1"/>
             </div>
             <button type="submit" class="btn btn-primary mt-3">Registration</button>

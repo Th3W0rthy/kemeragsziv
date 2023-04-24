@@ -9,7 +9,7 @@
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <Field type="text" name="password" id="password" class="form-control" rules="required"/> 
+                <Field type="password" name="password" id="password" class="form-control" rules="required"/> 
                 <ErrorMessage name="password" as="div" class="alert alert-danger m-1"/>
             </div>
             <button type="submit" class="btn btn-primary mt-3">Login</button>
@@ -24,6 +24,6 @@ function onSubmit(values){
 import * as yup from 'yup';
 const schema = yup.object({
     email: yup.string().email().required("The field is mandatory"),
-    password: yup.string().required("The field is mandatory").min(8,"Minimum 8 karakter kell")
+    password: yup.string().required("The field is mandatory")
 })
 </script>

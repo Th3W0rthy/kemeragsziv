@@ -14,7 +14,7 @@ export const router = createRouter({
       },
     },
     {
-      path:'/Flights',
+      path:'/flights',
       name:'Flights',
       component: () => import('@/pages/Flights.vue'),
       meta:{
@@ -23,7 +23,7 @@ export const router = createRouter({
       }
     },
     {
-      path:'/Registration',
+      path:'/registration',
       name:'Registration',
       component: () => import('@/pages/Registration.vue'),
       meta:{
@@ -32,7 +32,7 @@ export const router = createRouter({
       }
     },
     {
-      path:'/Login',
+      path:'/login',
       name:'Login',
       component: () => import('@/pages/Login.vue'),
       meta:{
@@ -43,4 +43,4 @@ export const router = createRouter({
   ]
 })
 
-router.beforeEach(setTitle)
+//router.beforeEach(setTitle)

@@ -20,13 +20,13 @@
               <router-link class="nav-link active" aria-current="page" to="/">Home</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/Flights" >Flights</router-link>
+              <router-link class="nav-link" to="/flights" >Flights</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/Login" >Login</router-link>
+              <router-link class="nav-link" to="/login" >Login</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/Registration" >Registration</router-link>
+              <router-link class="nav-link" to="/registration" >Registration</router-link>
             </li>
             <li class="nav-item dropdown">
               <a
@@ -59,6 +59,7 @@
 </template>
 
 <script setup>
+import {RouterLink} from 'vue-router'
 function onChange(locale){
     localStorage.setItem('locale',locale);
 }
