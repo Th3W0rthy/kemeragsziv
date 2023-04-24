@@ -19,4 +19,20 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/flights',[FlightController::class, "index"])->name("flights.index");
+Route::get('/flights',[FlightController::class, "index"])
+    ->name("flights.index");
+
+Route::get('/flights/{id}',[FlightController::class, "show"])
+    ->whereNumber("id")
+    ->name("flights.show");
+
+Route::post('/flights',[FlightController::class, "store"])
+    ->name("flights.store");
+
+Route::put('/flights/{id}',[FlightController::class, "update"])
+    ->whereNumber("id")  
+    ->name("flights.update");
+
+Route::delete('/flights/{id}',[FlightController::class, "destroy"])
+    ->whereNumber("id")
+    ->name("flights.destroy");

@@ -27,6 +27,7 @@ class FlightResource extends JsonResource
             'arrival_airport' => Airport::findOrFail($this->arrival_airport)->name,
             'airline_id' => Airline::findOrFail($this->airline_id)->name,
             'aircraft_id' => Aircraft::findOrFail($this->aircraft_id)->manufacturer . " " . Aircraft::findOrFail($this->aircraft_id)->model,
+            'basic_price' => $this->basic_price,
             'ground_handler' => $this->ground_handler,
         ];
     }

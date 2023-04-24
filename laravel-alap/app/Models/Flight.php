@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Flight extends Model
 {
     protected $table = "flights";
-    protected $fillable = ['number','departure','arrival','departure_airport','arrival_airport','airline_id','aircraft_id','cost','basic_price'];
+    protected $fillable = ['number','departure','arrival','departure_airport','arrival_airport','airline_id','aircraft_id','cost','basic_price','ground_handler'];
     protected $casts = [
         "departure" => "datetime",
         "arrival" => "datetime",
