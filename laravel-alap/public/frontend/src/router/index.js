@@ -14,15 +14,33 @@ export const router = createRouter({
       },
     },
     {
-      path:'/Flights',
+      path:'/flights',
       name:'Flights',
       component: () => import('@/pages/Flights.vue'),
       meta:{
         requiresAuth: false,
         title: 'Flights'
       }
+    },
+    {
+      path:'/registration',
+      name:'Registration',
+      component: () => import('@/pages/Registration.vue'),
+      meta:{
+        requiresAuth: false,
+        title: 'Registration'
+      }
+    },
+    {
+      path:'/login',
+      name:'Login',
+      component: () => import('@/pages/Login.vue'),
+      meta:{
+        requiresAuth: false,
+        title: 'Login'
+      }
     }
   ]
 })
 
-router.beforeEach(setTitle)
+//router.beforeEach(setTitle)
