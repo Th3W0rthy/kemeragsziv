@@ -1,5 +1,5 @@
 <template>
-    <h1 class="display-1 text-center">Registration</h1>
+    <h1 class="display-1 text-center">Register</h1>
     <div class="w-75 nt-5 m-auto p-5 bg-succes bg-opacity-25">
         <VFrom @submit="onSubmit" :validation-schema="schema">
             <div class="form-group">

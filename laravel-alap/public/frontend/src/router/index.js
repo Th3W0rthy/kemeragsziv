@@ -14,21 +14,39 @@ export const router = createRouter({
       },
     },
     {
-      path:'/flights',
-      name:'Flights',
-      component: () => import('@/pages/Flights.vue'),
-      meta:{
+      path: '/admin',
+      name: 'Admin',
+      component: () => import('@/pages/Admin.vue'),
+      meta: {
         requiresAuth: false,
-        title: 'Flights'
-      }
+        title: 'Admin'
+      },
     },
     {
-      path:'/registration',
-      name:'Registration',
-      component: () => import('@/pages/Registration.vue'),
+      path: '/luggage',
+      name: 'Luggage',
+      component: () => import('@/pages/LuggageLocation.vue'),
+      meta: {
+        requiresAuth: false,
+        title: 'Luggage'
+      },
+    },
+    {
+      path: '/qrscanner',
+      name: 'qrscanner',
+      component: () => import('@/pages/QrScanner.vue'),
+      meta: {
+        requiresAuth: false,
+        title: 'QRScanner'
+      },
+    },
+    {
+      path:'/register',
+      name:'Register',
+      component: () => import('@/pages/Register.vue'),
       meta:{
         requiresAuth: false,
-        title: 'Registration'
+        title: 'Register'
       }
     },
     {

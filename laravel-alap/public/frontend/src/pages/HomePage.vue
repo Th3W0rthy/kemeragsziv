@@ -1,40 +1,103 @@
 <script setup>
-import { useCounter } from '@/stores/CounterStore.mjs'
+import { useFlight } from '@/stores/FlightStore.js';
+import { onMounted } from 'vue';
 
-const CounterStore = useCounter()
+const FlightStore = useFlight();
 
+async function onClick(id){
+  const flight = await FlightStore.getFlight(id);
+  alert(flight.number);
+}
 
+onMounted(FlightStore.getFlights);
 </script>
-<script>
-// Az API kulcs és a város neve
-var apiKey = '6ea0dd1fe69906c6dd07299aa527f803';
-var city = 'Budapest';
 
-// Az API URL és a lekérdezés paraméterei
-var apiUrl = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey;
-
-// Az AJAX hívás az API lekérdezéshez
-var xhr = new XMLHttpRequest();
-xhr.open('GET', apiUrl);
-xhr.onreadystatechange = function() {
-	if (xhr.readyState === 4 && xhr.status === 200) {
-		var response = JSON.parse(xhr.responseText);
-		var weather = response.weather[0].description;
-		var temp = response.main.temp;
-		var humidity = response.main.humidity;
-		var windSpeed = response.wind.speed;
-		document.getElementById('weather').innerHTML = 'Időjárás: ' + weather + ', Hőmérséklet: ' + temp + ', Páratartalom: ' + humidity + ', Szélsebesség: ' + windSpeed;
-	}
-};
-xhr.send();
-</script>
 <template>
-  <main class="text-center">
-    <h1>Weather</h1>
-    <div id="weather"></div>
-    <h1 class="display-1 my-5">{{ $t('pages.home.hello') }}</h1>
-    <button class="btn btn-success" @click="CounterStore.increment()">
-      {{ $t('pages.home.counter', { n: CounterStore.counter }) }}
-    </button>
+  <main class="container">
+    <table class="table table-striped table-dark">
+      <thead>
+      <tr>
+        <th>Departure</th>
+        <th>Arrival</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Airline</th>
+        <th>Flight number</th>
+      </tr>
+    </thead>
+    </table>
+    <div id="flights">
+      <table class="table table-striped table-dark" v-for="flight in FlightStore.flights" :key="flight.id">
+        <tbody>
+          <tr>
+            <td>{{ flight.departure }}</td>
+            <td>{{ flight.arrival }}</td>
+            <td>{{ flight.departure_airport }}</td>
+            <td>{{ flight.arrival_airport }}</td>
+            <td>{{ flight.airline }}</td>
+            <td>{{ flight.number }}</td>
+          </tr>
+          <tr>
+            <td colspan="6">
+              <div class="row">
+                <div class="col">
+                  <p>
+                    <span>Departure: </span>
+                    <span>{{ flight.departure }}</span>
+                  </p>
+                  <p>
+                    <span>Arrival: </span>
+                    <span>{{ flight.arrival }}</span>
+                  </p>
+                  <p>
+                    <span>From: </span>
+                    <span>{{ flight.departure_airport }}</span>
+                  </p>
+                  <p>
+                    <span>To: </span>
+                    <span>{{ flight.arrival_airport }}</span>
+                  </p>
+                </div>
+                <div class="col">
+                  <p>
+                    <span>Airline: </span>
+                    <span>{{ flight.airline }}</span>
+                  </p>
+                  <p>
+                    <span>Phone: </span>
+                    <span></span>
+                  </p>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!--
+    <table class="table table-striped table-dark">
+      <thead>
+        <tr>
+          <th>Departure</th>
+          <th>Arrival</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Airline</th>
+          <th>Flight number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="flight in FlightStore.flights" :key="flight.id" @click="onClick(flight.id)">
+          <td>{{ flight.departure }}</td>
+          <td>{{ flight.arrival }}</td>
+          <td>{{ flight.departure_airport }}</td>
+          <td>{{ flight.arrival_airport }}</td>
+          <td>{{ flight.airline }}</td>
+          <td>{{ flight.number }}</td>
+        </tr>
+      </tbody>
+    </table>
+    -->
   </main>
 </template>
