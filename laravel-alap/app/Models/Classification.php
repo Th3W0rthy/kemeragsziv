@@ -15,7 +15,7 @@ class Classification extends Model
         return $this->belongsToMany(Aircraft::class, "classes_aircrafts");
     }
 
-    public function seats()
+    public function seat()
     {
         return $this->belongsTo(Seat::class);
     }

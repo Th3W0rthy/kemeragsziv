@@ -15,23 +15,23 @@ class Flight extends Model
     public $timestamps = false;
     
 
-    public function tickets()
+    public function ticket()
     {
-        return $this->hasMany(Ticket::class);
+        return $this->belongsTo(Ticket::class);
     }
 
-    public function aircraft()
+    public function airports()
     {
-        return $this->belongsTo(Aircraft::class);
+        return $this->hasMany(Airport::class);
     }
 
-    public function airport()
+    public function aircrafts()
     {
-        return $this->belongsTo(Airport::class);
+        return $this->hasMany(Aircraft::class);
     }
 
-    public function airline()
+    public function airlines()
     {
-        return $this->belongsTo(Airline::class);
+        return $this->hasMany(Airline::class);
     }
 }

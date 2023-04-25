@@ -10,14 +10,14 @@ class Airport extends Model
     protected $fillable = ['name','iata','time_zone','phone','email','website','continent','country','settlement'];
     public $timestamps = false;
 
-    public function luggages_logs()
+    public function luggage_log()
     {
-        return $this->hasMany(Luggage_log::class);
+        return $this->belongsTo(Luggage_log::class);
     }
 
-    public function flights()
+    public function flight()
     {
-        return $this->hasMany(Flight::class);
-        return $this->hasMany(Flight::class);
+        return $this->belongsTo(Flight::class);
+        return $this->belongsTo(Flight::class);
     }
 }

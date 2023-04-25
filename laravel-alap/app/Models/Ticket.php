@@ -10,23 +10,23 @@ class Ticket extends Model
     protected $fillable = ['user_id','flight_id','name', 'sex', 'birth', 'email', 'phone', 'billing_name','country','postcode','settlement','address','tax_number','price','seat_id'];
     public $timestamps = true;
 
-    public function user()
+    public function users()
     {
-        return $this->belongsTo(User::class);
+        return $this->hasMany(User::class);
     }
 
-    public function luggages()
+    public function flights()
     {
-        return $this->hasMany(Luggage::class);
+        return $this->hasMany(Flight::class);
     }
 
-    public function flight()
+    public function luggage()
     {
-        return $this->belongsTo(Flight::class);
+        return $this->belongsTo(Luggage::class);
     }
 
-    public function seat()
+    public function seats()
     {
-        return $this->belongsTo(Seat::class);
+        return $this->hasMany(Seat::class);
     }
 }
