@@ -44,11 +44,14 @@ onMounted(FlightStore.getFlights);
             <td>{{ flight.arrival_airport }}</td>
             <td>{{ flight.airline }}</td>
             <td>{{ flight.number }}</td>
+<<<<<<< HEAD
             <td>
               <button class="btn btn-primary" @click="showFlight(flight.id)">
                 More
               </button>
             </td>
+=======
+>>>>>>> 65abdb1d618bdce92d02c5edddc4bd8f2f08e552
           </tr>
           <tr v-show="asd">
             <td colspan="6">
