@@ -6,15 +6,8 @@ const FlightStore = useFlight();
 
 const emptyString = "";
 
-let show = false;
-
 async function showFlight(id){
-  if (show == false)
-  {
-    show = true;
-  }
-  const flight = await FlightStore.getFlight(id);
-  alert(`${flight.number}`);
+  const flightMore = await FlightStore.getFlight(id);
 }
 
 onMounted(FlightStore.getFlights);
@@ -31,6 +24,7 @@ onMounted(FlightStore.getFlights);
         <th>To</th>
         <th>Airline</th>
         <th>Flight number</th>
+        <th></th>
       </tr>
     </thead>
     </table>
@@ -40,70 +34,57 @@ onMounted(FlightStore.getFlights);
           <tr>
             <td>{{ flight.departure }}</td>
             <td>{{ flight.arrival }}</td>
-            <td>{{ flight.departure_airport }}</td>
-            <td>{{ flight.arrival_airport }}</td>
+            <td>{{ flight.from }}</td>
+            <td>{{ flight.to }}</td>
             <td>{{ flight.airline }}</td>
             <td>{{ flight.number }}</td>
-<<<<<<< HEAD
             <td>
               <button class="btn btn-primary" @click="showFlight(flight.id)">
                 More
               </button>
             </td>
-=======
->>>>>>> 65abdb1d618bdce92d02c5edddc4bd8f2f08e552
           </tr>
-          <tr v-show="asd">
-            <td colspan="6">
+          <tr v-show="true">
+            <td colspan="7">
               <div class="row">
                 <div class="col">
                   <p>
                     <span>Departure: </span>
-                    <span>{{ flight.departure }}</span>
+                    <span></span>
                   </p>
                   <p>
                     <span>Arrival: </span>
-                    <span>{{ flight.arrival }}</span>
+                    <span></span>
                   </p>
                   <p>
                     <span>From: </span>
-                    <span>
-                      {{ flight.departure_country}}, 
-                      {{ flight.departure_settlement}}, 
-                      {{ flight.departure_airport }}, 
-                      {{ flight.departure_iata }} 
-                    </span>
+                    <span></span>
                   </p>
                   <p>
                     <span>To: </span>
-                    <span>
-                      {{ flight.arrival_country}}, 
-                      {{ flight.arrival_settlement}}, 
-                      {{ flight.arrival_airport }}
-                      {{ flight.arrival_iata }} 
-                    </span>
+                    <span></span>
                   </p>
                 </div>
                 <div class="col">
                   <p>
                     <span>Airline: </span>
-                    <span><a id="airlineLink" href="" target="_blank">{{ flight.airline }}</a></span>
+                    <span><a id="airlineLink" href="" target="_blank"></a></span>
                   </p>
                   <p>
                     <span>IATA/ICAO: </span>
-                    <span>{{ flight.iata }}, {{ flight.icao }}</span>
+                    <span></span>
                   </p>
                   <p v-show="flight.airline_phone != emptyString ">
                     <span>Phone: </span>
-                    <span>{{ flight.airline_phone }}</span>
+                    <span></span>
                   </p>
                   <p v-show="flight.airline_email != emptyString">
                     <span>Email: </span>
-                    <span>{{ flight.airline_email }}</span>
+                    <span></span>
                   </p>
                   <p>
                     <span>Aircraft: </span>
-                    <span>{{ flight.aircraft }}</span>
+                    <span></span>
                   </p>
                 </div>
               </div>

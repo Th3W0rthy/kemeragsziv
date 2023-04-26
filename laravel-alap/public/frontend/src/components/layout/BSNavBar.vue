@@ -1,7 +1,13 @@
+<script>
+//import { logo } from "@/src/assets/img/logo.png";
+
+</script>
+
 <template>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
+        <img id="logo" src="../../assets/img/logo.png" height="30" alt="logo">
         <a class="navbar-brand" href="#">Sky Flights</a>
         <button
           class="navbar-toggler"

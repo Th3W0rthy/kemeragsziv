@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreFlightRequest;
 use App\Http\Requests\UpdateFlightRequest;
+use App\Http\Resources\FlightsResource;
 use App\Http\Resources\FlightResource;
 use App\Models\Flight;
 use Illuminate\Http\Request;
