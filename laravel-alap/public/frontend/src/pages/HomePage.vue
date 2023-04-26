@@ -39,7 +39,6 @@ onMounted(FlightStore.getFlights);
             <td>{{ flight.arrival_airport }}</td>
             <td>{{ flight.airline }}</td>
             <td>{{ flight.number }}</td>
-            <td></td>
           </tr>
           <tr v-show="show">
             <td colspan="6">
