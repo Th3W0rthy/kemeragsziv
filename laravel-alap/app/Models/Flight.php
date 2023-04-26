@@ -14,24 +14,33 @@ class Flight extends Model
     ];
     public $timestamps = false;
     
+    public function duration()
+    {
+        return $this->departure->diff($this->arrival);
+    }
 
     public function ticket()
     {
         return $this->belongsTo(Ticket::class);
     }
 
-    public function airports()
+    public function departureAirport()
     {
-        return $this->hasMany(Airport::class);
+        return $this->hasOne(Airport::class,"id","departure_airport");
     }
 
-    public function aircrafts()
+    public function arrivalAirport()
     {
-        return $this->hasMany(Aircraft::class);
+        return $this->hasOne(Airport::class,"id","arrival_airport");
     }
 
-    public function airlines()
+    public function aircraft()
     {
-        return $this->hasMany(Airline::class);
+        return $this->hasOne(Aircraft::class, "id");
+    }
+
+    public function airline()
+    {
+        return $this->hasOne(Airline::class, "id");
     }
 }

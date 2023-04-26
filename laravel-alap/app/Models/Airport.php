@@ -15,9 +15,13 @@ class Airport extends Model
         return $this->belongsTo(Luggage_log::class);
     }
 
-    public function flight()
+    public function departureFlight()
     {
-        return $this->belongsTo(Flight::class);
-        return $this->belongsTo(Flight::class);
+        return $this->belongsTo(Flight::class, "departure_airport", "id");
+    }
+
+    public function arrivalFlight()
+    {
+        return $this->belongsTo(Flight::class, "arrival_airport", "id");
     }
 }

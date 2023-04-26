@@ -17,16 +17,27 @@ class FlightResource extends JsonResource
      */
     public function toArray($request)
     {
-        $duration = $this->departure->diff($this->arrival);
         return [
+            'id' => $this->id,
             'number' => $this->number,
-            'departure' => $this->departure,
-            'arrival' => $this->arrival,
-            'duration' => $duration->format("%H:%i"),
-            'departure_airport' => Airport::findOrFail($this->departure_airport)->name,
-            'arrival_airport' => Airport::findOrFail($this->arrival_airport)->name,
-            'airline_id' => Airline::findOrFail($this->airline_id)->name,
-            'aircraft_id' => Aircraft::findOrFail($this->aircraft_id)->manufacturer . " " . Aircraft::findOrFail($this->aircraft_id)->model,
+            'departure' => $this->departure->format("Y-m-d H:i"),
+            'arrival' => $this->arrival->format("Y-m-d H:i"),
+            'duration' => $this->duration()->format("%H:%i"),
+            'departure_airport' => $this->departureAirport->name,
+            'departure_country' => $this->departureAirport->country,
+            'departure_settlement' => $this->departureAirport->settlement,
+            'departure_iata' => $this->departureAirport->iata,
+            'arrival_airport' => $this->arrivalAirport->name,
+            'arrival_country' => $this->arrivalAirport->country,
+            'arrival_settlement' => $this->arrivalAirport->settlement,
+            'arrival_iata' => $this->arrivalAirport->iata,
+            'airline' => $this->airline->name,
+            'airline_website' => $this->airline->website,
+            'airline_phone' => $this->airline->phone,
+            'airline_email' => $this->airline->email,
+            'iata' => $this->airline->iata,
+            'icao' => $this->airline->icao,
+            'aircraft' => $this->aircraft->manufacturer . " " . $this->aircraft->model,
             'basic_price' => $this->basic_price,
             'ground_handler' => $this->ground_handler,
         ];

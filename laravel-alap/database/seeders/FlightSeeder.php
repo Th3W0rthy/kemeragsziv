@@ -17,7 +17,7 @@ class FlightSeeder extends Seeder
     {
         DB::table("flights")->insert([
             [
-                'number' => "W60001",
+                'number' => "W62486",
                 'departure' => "2023-04-26 09:00:00",
                 'arrival' => "2023-04-26 10:05:00",
                 'departure_airport' => "1",
@@ -29,7 +29,7 @@ class FlightSeeder extends Seeder
                 'ground_handler' => "Menzies GH",
             ],
             [
-                'number' => "FR0001",
+                'number' => "FR1658",
                 'departure' => "2023-04-26 09:15:00",
                 'arrival' => "2023-04-26 11:50:00",
                 'departure_airport' => "1",
