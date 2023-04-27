@@ -1,0 +1,41 @@
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+#app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: lightskyblue;
+}
+
+.table {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  table-layout: fixed;
+}
+
+a{
+  color: white;
+}
+
+a:hover{
+  color: lightskyblue;
+}
+
+#filter {
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 10px;
+  border: 2px solid black;
+  border-radius: 10px 10px 10px 10px;
+}
+
+#info {
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+  margin-right: 10px;
+  border: 2px solid black;
+  border-radius: 10px 10px 10px 10px;
+}
