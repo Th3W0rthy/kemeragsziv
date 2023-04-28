@@ -15,7 +15,18 @@
             <button type="submit" class="btn btn-primary mt-3">Login</button>
         </VFrom>  
     </div>   
+   
 </template>
 <script setup>
-import * as login from "@/stores/LoginStore.js";
+
+import * as yup from 'yup';
+import {Form as VFrom, Field, ErrorMessage}from  "vee-validate";
+function onSubmit(values){
+    console.table(values)
+}
+
+const schema = yup.object({
+    email: yup.string().email().required("The field is mandatory"),
+    password: yup.string().required("The field is mandatory"),
+});
 </script>

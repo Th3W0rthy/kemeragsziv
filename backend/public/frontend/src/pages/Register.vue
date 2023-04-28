@@ -22,13 +22,13 @@
     </div>   
 </template>
 <script setup>
-import * as reqister from "@/stores/ReqisterStore.js";
 
-import {From as VFrom, Field, ErrorMessage}from "vee-validate";
+import * as yup from 'yup';
+import {Form as VFrom, Field, ErrorMessage}from  "vee-validate";
 function onSubmit(values){
     console.table(values)
 }
-import * as yup from 'yup';
+
 const schema = yup.object({
     email: yup.string().email().required("The field is mandatory"),
     password: yup.string().required("The field is mandatory").matches(
