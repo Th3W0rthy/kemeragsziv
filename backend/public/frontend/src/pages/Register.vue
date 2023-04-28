@@ -1,7 +1,7 @@
 <template>
     <h1 class="display-1 text-center">Register</h1>
     <div class="w-75 nt-5 m-auto p-5 bg-succes bg-opacity-25">
-        <VFrom @submit="onSubmit" :validation-schema="schema">
+        <VFrom @submit="onSubmit" id="vform" :validation-schema="schema">
             <div class="form-group">
                 <label for="email">Email</label>
                 <Field type="text" name="email" id="email" class="form-control" rules="required"/> 
@@ -22,6 +22,8 @@
     </div>   
 </template>
 <script setup>
+import * as reqister from "@/stores/ReqisterStore.js";
+
 import {From as VFrom, Field, ErrorMessage}from "vee-validate";
 function onSubmit(values){
     console.table(values)
