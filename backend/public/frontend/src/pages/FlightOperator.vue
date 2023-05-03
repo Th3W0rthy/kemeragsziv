@@ -4,6 +4,6 @@
 
 <template>
   <main class="container">
-   qr
+   flightoperator
   </main>
 </template>

@@ -4,13 +4,12 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: lightskyblue;
 }
 
 .table {
   padding: 0;
-  margin: 0;
   border: 0;
+  margin: 0;
   table-layout: fixed;
 }
 
@@ -25,17 +24,9 @@ a:hover{
 #filter {
   color: white;
   text-align: center;
-  margin-top: 10px;
-  margin-left: 10px;
-  border: 2px solid black;
-  border-radius: 10px 10px 10px 10px;
+  margin-top: 20px;
 }
 
-#info {
-  color: white;
-  text-align: center;
-  margin-top: 10px;
-  margin-right: 10px;
-  border: 2px solid black;
-  border-radius: 10px 10px 10px 10px;
+.flights_table {
+  margin-top: 20px;
 }

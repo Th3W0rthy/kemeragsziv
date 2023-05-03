@@ -1,13 +1,8 @@
-<script>
-//import { logo } from "@/src/assets/img/logo.png";
-
-</script>
-
 <template>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <img id="logo" src="../../assets/img/logo.png" height="30" alt="logo">
+        <img id="logo" :src="logo" height="30" alt="logo">
         <a class="navbar-brand" href="#">Sky Flights</a>
         <button
           class="navbar-toggler"
@@ -23,13 +18,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <router-link class="nav-link" to="/">Flights</router-link>
+              <router-link class="nav-link" to="/flights">Flights</router-link>
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="/luggage">Luggage location</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/qrscanner">QR code scanner</router-link>
+              <router-link class="nav-link" to="/groundhandler">Ground Handler</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/flightoperator">Flight Operator</router-link>
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="/admin">Administration</router-link>
@@ -49,6 +47,7 @@
 
 <script setup>
 import {RouterLink} from 'vue-router'
+import logo from "@/assets/img/logo.png";
 function onChange(locale){
     localStorage.setItem('locale',locale);
 }

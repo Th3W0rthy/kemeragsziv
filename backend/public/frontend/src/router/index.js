@@ -5,12 +5,12 @@ export const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: '/',
-      name: 'home',
+      path: '/flights',
+      name: 'flights',
       component: () => import('@/pages/HomePage.vue'),
       meta: {
         requiresAuth: false,
-        title: 'Home'
+        title: 'Flights'
       },
     },
     {
@@ -32,12 +32,21 @@ export const router = createRouter({
       },
     },
     {
-      path: '/qrscanner',
-      name: 'qrscanner',
-      component: () => import('@/pages/QrScanner.vue'),
+      path: '/groundhandler',
+      name: 'groundhandler',
+      component: () => import('@/pages/GroundHandler.vue'),
       meta: {
         requiresAuth: false,
-        title: 'QRScanner'
+        title: 'Ground Handler'
+      },
+    },
+    {
+      path: '/flightoperator',
+      name: 'flightoperator',
+      component: () => import('@/pages/FlightOperator.vue'),
+      meta: {
+        requiresAuth: false,
+        title: 'Flight Operator'
       },
     },
     {
