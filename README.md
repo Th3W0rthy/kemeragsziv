@@ -57,7 +57,7 @@ docker compose build
 
 Első futtatáskor kell ezt használi. Utána ha nem módosítjük a dockerfile-t.
 ```bash
-docker compose up
+docker compose up -d
 ```
 ```bash
 docker docker compose -f docker-compose.yml -f docker-compose.dev.yml  up -d
