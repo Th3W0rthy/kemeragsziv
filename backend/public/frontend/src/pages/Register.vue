@@ -21,13 +21,10 @@
         </VFrom>  
     </div>   
 </template>
-<script setup>
+<script setup >
 
 import * as yup from 'yup';
-import {Form as VFrom, Field, ErrorMessage}from  "vee-validate";
-function onSubmit(values){
-    console.table(values)
-}
+import {Form as VFrom, Field, ErrorMessage} from  "vee-validate";
 
 const schema = yup.object({
     email: yup.string().email().required("The field is mandatory"),
@@ -37,4 +34,28 @@ const schema = yup.object({
     ),
     password_confirmation: yup.string().required().oneOf([yup.ref('password'), null], "Passwords don't match.")
 });
+</script>
+
+<script>
+import { useAuthStore } from '@/stores/RegistrationSotre';
+
+export default {
+  name: 'RegisterForm',
+  setup() {
+    const authStore = useAuthStore();
+
+    const email = ref('');
+    const password = ref('');
+
+    const onSubmit = async () => {
+      await authStore.register({ email: email.value, password: password.value });
+    };
+
+    return {
+      email,
+      password,
+      onSubmit,
+    };
+  },
+};
 </script>
