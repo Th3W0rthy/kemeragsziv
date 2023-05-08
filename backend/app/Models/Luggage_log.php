@@ -10,13 +10,13 @@ class Luggage_log extends Model
     protected $fillable = ['luggage_id','airport_id','created_at','updated_at'];
     public $timestamps = false;
 
-    public function luggages()
+    public function luggage()
     {
-        return $this->hasMany(Luggage::class);
+        return $this->belongsTo(Luggage::class);
     }
 
-    public function airports()
+    public function airport()
     {
-        return $this->hasMany(Luggage::class);
+        return $this->belongsTo(Airport::class);
     }
 }

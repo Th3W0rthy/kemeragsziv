@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FlightController;
+use App\Http\Controllers\Luggage_logController;
 use App\Http\Controllers\LuggageController;
 use App\Http\Controllers\TicketController;
 use Illuminate\Http\Request;
@@ -69,11 +70,11 @@ Route::delete('/tickets/{id}',[TicketController::class, "destroy"])
 Route::get('/luggages',[LuggageController::class, "index"])
     ->name("luggages.index");
 
-    Route::get('/luggages/{id}',[LuggageController::class, "show"])
+Route::get('/luggages/{id}',[LuggageController::class, "show"])
     ->whereNumber("id")
     ->name("luggages.show");
 
-Route::post('/luggages',[LuggageController::class, "store"])
+Route::put('/luggages',[LuggageController::class, "store"])
     ->name("luggages.store");
 
 Route::put('/luggages/{id}',[LuggageController::class, "update"])
@@ -83,3 +84,21 @@ Route::put('/luggages/{id}',[LuggageController::class, "update"])
 Route::delete('/luggages/{id}',[LuggageController::class, "destroy"])
     ->whereNumber("id")
     ->name("luggages.destroy");
+
+Route::get('/logs',[Luggage_logController::class, "index"])
+    ->name("logs.index");
+
+Route::get('/logs/{id}',[Luggage_logController::class, "show"])
+    ->whereNumber("id")
+    ->name("logs.show");
+
+Route::put('/logs',[Luggage_logController::class, "store"])
+    ->name("logs.store");
+
+Route::put('/logs/{id}',[Luggage_logController::class, "update"])
+    ->whereNumber("id")  
+    ->name("logs.update");
+
+Route::delete('/logs/{id}',[Luggage_logController::class, "destroy"])
+    ->whereNumber("id")
+    ->name("logs.destroy");

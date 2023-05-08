@@ -10,9 +10,9 @@ class Luggage extends Model
     protected $fillable = ['ticket_id','tag','size','price'];
     public $timestamps = false;
 
-    public function luggage_log()
+    public function luggage_logs()
     {
-        return $this->belongsTo(Luggage_log::class);
+        return $this->hasMany(Luggage_log::class);
     }
 
     public function ticket()
