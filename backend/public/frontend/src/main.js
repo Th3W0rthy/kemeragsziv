@@ -19,7 +19,7 @@ const i18n = createI18n({
   locale: localStorage.getItem('localhost') ?? 'hu',
   fallbackLocal: 'en'
 })
-
+const pinia = createPinia()
 const app = createApp(App)
 
 app.component('Alert', BSAlert)

@@ -17,16 +17,35 @@
     </div>   
    
 </template>
-<script setup>
-
+<script setup >
 import * as yup from 'yup';
-import {Form as VFrom, Field, ErrorMessage}from  "vee-validate";
-function onSubmit(values){
-    console.table(values)
-}
+import {Form as VFrom, Field, ErrorMessage} from  "vee-validate";
 
 const schema = yup.object({
     email: yup.string().email().required("The field is mandatory"),
     password: yup.string().required("The field is mandatory"),
 });
+</script>
+<script>
+import { useAuthStore } from '@/store/LoginStore';
+
+export default {
+  name: 'LoginForm',
+  setup() {
+    const authStore = useAuthStore();
+
+    const email = ref('');
+    const password = ref('');
+
+    const onSubmit = async () => {
+      await authStore.login(email.value, password.value);
+    };
+
+    return {
+      email,
+      password,
+      onSubmit,
+    };
+  },
+};
 </script>
