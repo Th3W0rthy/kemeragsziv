@@ -23,12 +23,12 @@ export const router = createRouter({
       },
     },
     {
-      path: '/luggage',
-      name: 'Luggage',
+      path: '/luggagelocation',
+      name: 'LuggageLocation',
       component: () => import('@/pages/LuggageLocation.vue'),
       meta: {
         requiresAuth: false,
-        title: 'Luggage'
+        title: 'LuggageLocation'
       },
     },
     {
@@ -65,6 +65,15 @@ export const router = createRouter({
       meta:{
         requiresAuth: false,
         title: 'Login'
+      }
+    },
+    {
+      path:'/flightreservation',
+      name:'FlightReservation',
+      component: () => import('@/pages/FlightReservation.vue'),
+      meta:{
+        requiresAuth: false,
+        title: 'FlightReservation'
       }
     }
   ]

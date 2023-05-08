@@ -9,6 +9,9 @@ class Ticket extends Model
     protected $table = "tickets";
     protected $fillable = ['user_id','flight_id','name', 'sex', 'birth', 'email', 'phone', 'billing_name','country','postcode','settlement','address','tax_number','price','seat_id'];
     public $timestamps = true;
+    protected $casts = [
+        "birth" => "datetime",
+    ];
 
     public function users()
     {

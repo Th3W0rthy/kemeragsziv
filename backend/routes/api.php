@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FlightController;
+use App\Http\Controllers\TicketController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -45,3 +46,6 @@ Route::put('/flights/{id}',[FlightController::class, "update"])
 Route::delete('/flights/{id}',[FlightController::class, "destroy"])
     ->whereNumber("id")
     ->name("flights.destroy");
+
+Route::get('/tickets',[TicketController::class, "index"])
+    ->name("tickets.index");
