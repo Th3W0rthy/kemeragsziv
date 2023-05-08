@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AirportController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FlightController;
 use App\Http\Controllers\Luggage_logController;
@@ -102,3 +103,21 @@ Route::put('/logs/{id}',[Luggage_logController::class, "update"])
 Route::delete('/logs/{id}',[Luggage_logController::class, "destroy"])
     ->whereNumber("id")
     ->name("logs.destroy");
+
+Route::get('/airports',[AirportController::class, "index"])
+    ->name("airports.index");
+
+Route::get('/airports/{id}',[AirportController::class, "show"])
+    ->whereNumber("id")
+    ->name("airports.show");
+
+Route::put('/airports',[AirportController::class, "store"])
+    ->name("airports.store");
+
+Route::put('/airports/{id}',[AirportController::class, "update"])
+    ->whereNumber("id")  
+    ->name("airports.update");
+
+Route::delete('/airports/{id}',[AirportController::class, "destroy"])
+    ->whereNumber("id")
+    ->name("airports.destroy");

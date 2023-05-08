@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AirportRequest;
+use App\Http\Resources\AirportResource;
+use App\Models\Airport;
 use Illuminate\Http\Request;
 
 class AirportController extends Controller
@@ -13,18 +16,21 @@ class AirportController extends Controller
      */
     public function index()
     {
-        //
+        $airports = Airport::all();
+        return AirportResource::collection($airports);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\AirportRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AirportRequest $request)
     {
-        //
+        $data = $request->validated();
+        $newAirport = Airport::create($data);
+        return new AirportResource($newAirport);
     }
 
     /**
@@ -35,19 +41,24 @@ class AirportController extends Controller
      */
     public function show($id)
     {
-        //
+        $airport = Airport::findOrFail($id);
+        return new Airport($airport);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\AirportRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AirportRequest $request, $id)
     {
-        //
+        $data = $request->validated();
+        $airport = Airport::findOrFail($id);
+        if ($airport->update($data)) {
+            return new AirportResource($airport);
+        }
     }
 
     /**
@@ -58,6 +69,7 @@ class AirportController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $airport = Airport::findOrFail($id);
+        $airport->delete;
     }
 }
