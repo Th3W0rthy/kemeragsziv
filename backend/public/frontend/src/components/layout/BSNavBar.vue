@@ -21,7 +21,7 @@
               <router-link class="nav-link" to="/flights">Flights</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/luggage">Luggage location</router-link>
+              <router-link class="nav-link" to="/luggagelocation">Luggage location</router-link>
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="/groundhandler">Ground Handler</router-link>
