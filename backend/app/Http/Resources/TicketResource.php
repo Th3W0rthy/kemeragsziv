@@ -31,7 +31,7 @@ class TicketResource extends JsonResource
             'tax_number' => $this->tax_number,
             'price' => $this->price,
             'seat' => $this->seat,
-            //'luggage' => $this->luggage,
+            'luggage' => $this->luggages,
         ];
     }
 }
