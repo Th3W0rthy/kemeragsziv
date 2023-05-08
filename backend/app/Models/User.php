@@ -45,8 +45,8 @@ class User extends Authenticatable
     protected $table = "users";
     public $timestamps = true;
 
-    public function ticket()
+    public function tickets()
     {
-        return $this->belongsTo(Ticket::class);
+        return $this->hasMany(Ticket::class);
     }
 }

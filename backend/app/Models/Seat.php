@@ -10,9 +10,9 @@ class Seat extends Model
     protected $fillable = ['aircraft_id','class_id','seat_row','seat_col'];
     public $timestamps = false;
 
-    public function ticket()
+    public function tickets()
     {
-        return $this->belongsTo(Ticket::class);
+        return $this->hasMany(Ticket::class);
     }
 
     public function classes()

@@ -16,8 +16,8 @@ class TicketResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            //'user' => $this->users->name,
-            //"flight" => $this->flights,
+            'user' => $this->user->name,
+            "flight" => $this->flight,
             'name' => $this->name,
             'sex' => $this->sex,
             'birth' => $this->birth->format("Y-m-d"),
@@ -30,7 +30,8 @@ class TicketResource extends JsonResource
             'address' => $this->address,
             'tax_number' => $this->tax_number,
             'price' => $this->price,
-            //'seat_id' => $this->seats,
+            'seat' => $this->seat,
+            //'luggage' => $this->luggage,
         ];
     }
 }

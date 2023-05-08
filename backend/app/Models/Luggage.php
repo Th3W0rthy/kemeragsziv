@@ -15,8 +15,8 @@ class Luggage extends Model
         return $this->belongsTo(Luggage_log::class);
     }
 
-    public function tickets()
+    public function ticket()
     {
-        return $this->hasMany(Luggage::class);
+        return $this->belongsTo(Luggage::class);
     }
 }

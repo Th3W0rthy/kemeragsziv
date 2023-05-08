@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TicketRequest;
 use App\Http\Resources\TicketResource;
 use App\Models\Ticket;
 use Illuminate\Http\Request;
@@ -22,12 +23,14 @@ class TicketController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\TicketRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TicketRequest $request)
     {
-        //
+        $data = $request->validated();
+        $newTicket = Ticket::create($data);
+        return new TicketResource($newTicket);
     }
 
     /**
@@ -38,19 +41,25 @@ class TicketController extends Controller
      */
     public function show($id)
     {
-        //
+        $ticket = Ticket::findOrFail($id);
+        return new TicketResource($ticket);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\TicketRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TicketRequest $request, $id)
     {
-        //
+        $data = $request->validated();
+        $ticket = Ticket::findOrFail($id);
+        if ($ticket->update($data))
+        {
+            return new TicketResource($ticket);
+        }
     }
 
     /**
@@ -61,6 +70,7 @@ class TicketController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $ticket = Ticket::findOrFail($id);
+        $ticket->delete();
     }
 }

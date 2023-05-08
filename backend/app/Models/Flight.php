@@ -19,9 +19,9 @@ class Flight extends Model
         return $this->departure->diff($this->arrival);
     }
 
-    public function ticket()
+    public function tickets()
     {
-        return $this->belongsTo(Ticket::class);
+        return $this->hasMany(Ticket::class);
     }
 
     public function departureAirport()

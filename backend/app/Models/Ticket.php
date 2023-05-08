@@ -13,23 +13,23 @@ class Ticket extends Model
         "birth" => "datetime",
     ];
 
-    public function users()
+    public function user()
     {
-        return $this->hasMany(User::class);
+        return $this->belongsTo(User::class);
     }
 
-    public function flights()
+    public function flight()
     {
-        return $this->hasMany(Flight::class);
+        return $this->belongsTo(Flight::class);
     }
 
-    public function luggage()
+    public function luggages()
     {
-        return $this->belongsTo(Luggage::class);
+        return $this->hasMany(Luggage::class);
     }
 
-    public function seats()
+    public function seat()
     {
-        return $this->hasMany(Seat::class);
+        return $this->belongsTo(Seat::class);
     }
 }

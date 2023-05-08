@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreFlightRequest;
-use App\Http\Requests\UpdateFlightRequest;
-use App\Http\Resources\FlightsResource;
+use App\Http\Requests\FlightRequest;
 use App\Http\Resources\FlightResource;
 use App\Models\Flight;
 use Illuminate\Http\Request;
@@ -25,10 +23,10 @@ class FlightController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  App\Http\Requests\StoreFlightRequest;  $request
+     * @param  App\Http\Requests\FlightRequest;  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreFlightRequest $request)
+    public function store(FlightRequest $request)
     {
         $data = $request->validated();
         $newFlight = Flight::create($data);
@@ -50,11 +48,11 @@ class FlightController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  App\Http\Requests\UpdateFlightRequest;  $request
+     * @param  App\Http\Requests\FlightRequest;  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateFlightRequest $request, $id)
+    public function update(FlightRequest $request, $id)
     {
         $data = $request->validated();
         $flight = Flight::findOrFail($id);
