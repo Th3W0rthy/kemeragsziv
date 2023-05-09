@@ -5,11 +5,6 @@ import { onMounted } from 'vue';
 
 const AdminStore = useAdmin();
 
-async function showUser(id){
-  
-}
-
-onMounted(AdmintStore.getAdmin);
 </script>
 
 <template>
@@ -24,7 +19,7 @@ onMounted(AdmintStore.getAdmin);
         </tr>
       </thead>
       <tbody>
-        
+        <AdminRow v-for="AdminRow in AdminStore.getAdmin()" :key="admin.id"  ></AdminRow>
       </tbody>
     </table>
   </main>

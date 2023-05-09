@@ -12,7 +12,9 @@
                 <Field type="password" name="password" id="password" class="form-control" rules="required"/> 
                 <ErrorMessage name="password" as="div" class="alert alert-danger m-1"/>
             </div>
-            <button type="submit" class="btn btn-primary mt-3">Login</button>
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-success mt-3" >
+            </div>
         </VFrom>  
     </div>   
    
@@ -27,23 +29,18 @@ const schema = yup.object({
 });
 </script>
 <script>
-import { useAuthStore } from '@/store/LoginStore';
+import { useAuthStore } from '@/stores/AuthStore.js';
 
 export default {
   name: 'LoginForm',
   setup() {
     const authStore = useAuthStore();
 
-    const email = ref('');
-    const password = ref('');
-
-    const onSubmit = async () => {
-      await authStore.login(email.value, password.value);
+    const onSubmit = async (userdata) => {
+      await authStore.login(userdata);
     };
 
     return {
-      email,
-      password,
       onSubmit,
     };
   },

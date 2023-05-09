@@ -17,7 +17,7 @@
                 <Field type="password" name="password_confirmation" id="password_confirmation" class="form-control" rules="required"/> 
                 <ErrorMessage name="password_confirmation" as="div" class="alert alert-danger m-1"/>
             </div>
-            <button type="submit" class="btn btn-primary mt-3">Registration</button>
+            <input type="submit" value="Registration" class="btn btn-primary mt-3">
         </VFrom>  
     </div>   
 </template>
@@ -37,23 +37,18 @@ const schema = yup.object({
 </script>
 
 <script>
-import { useAuthStore } from '@/stores/RegistrationSotre';
+import { useAuthStore } from '@/stores/AuthStore.js';
 
 export default {
   name: 'RegisterForm',
   setup() {
     const authStore = useAuthStore();
 
-    const email = ref('');
-    const password = ref('');
-
-    const onSubmit = async () => {
-      await authStore.register({ email: email.value, password: password.value });
+    const onSubmit = async (userdata) => {
+      await authStore.register(userdata);
     };
 
     return {
-      email,
-      password,
       onSubmit,
     };
   },

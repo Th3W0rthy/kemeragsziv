@@ -40,11 +40,11 @@ import * as yup from 'yup';
 import {Form as VFrom, Field, ErrorMessage} from  "vee-validate";
 
 const schema = yup.object({
-    departure: yup.required(),
-    arrival: yup.required(),
-    from: yup.required(),
-    to: yup.required(),
-    airline: yup.required(),
-    flight_number: yup.required(),
+    departure: yup.string().required(),
+    arrival: yup.string().required(),
+    from: yup.string().required(),
+    to: yup.string().required(),
+    airline: yup.string().required(),
+    flight_number: yup.string().required(),
 });
 </script>

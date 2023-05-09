@@ -1,5 +1,4 @@
 <script setup>
-import { useFlight } from '@/stores/Adminsotre.js';
 import { onMounted } from 'vue';
 
 const AdminStore = useAdmin();
