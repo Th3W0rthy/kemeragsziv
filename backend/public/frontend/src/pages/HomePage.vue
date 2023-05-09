@@ -19,7 +19,13 @@ onMounted(FlightStore.getFlights);
     <div class="row">
       <div class="col-lg-3">
         <div id="filter" class="bg-dark">
-          <h5>Filters</h5>
+          <h5 id="h5">Filters</h5> 
+        </div>
+        <div class="search-bar">
+          <input type="text" class="textbox" placeholder="type here..."/>
+          <a class = "search-btn" href="#">
+            <p>Search</p>
+          </a>
         </div>
       </div>
       <div class="col-lg-9">
