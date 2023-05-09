@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AircraftController;
 use App\Http\Controllers\AirlineController;
 use App\Http\Controllers\AirportController;
 use App\Http\Controllers\AuthController;
@@ -33,6 +34,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//Flight
+
 Route::get('/flights',[FlightController::class, "index"])
     ->name("flights.index");
 
@@ -50,6 +53,8 @@ Route::put('/flights/{id}',[FlightController::class, "update"])
 Route::delete('/flights/{id}',[FlightController::class, "destroy"])
     ->whereNumber("id")
     ->name("flights.destroy");
+
+//Ticket
 
 Route::get('/tickets',[TicketController::class, "index"])
     ->name("tickets.index");
@@ -69,6 +74,8 @@ Route::delete('/tickets/{id}',[TicketController::class, "destroy"])
     ->whereNumber("id")
     ->name("tickets.destroy");
 
+//Luggage
+
 Route::get('/luggages',[LuggageController::class, "index"])
     ->name("luggages.index");
 
@@ -86,6 +93,8 @@ Route::put('/luggages/{id}',[LuggageController::class, "update"])
 Route::delete('/luggages/{id}',[LuggageController::class, "destroy"])
     ->whereNumber("id")
     ->name("luggages.destroy");
+
+//Luggage log
 
 Route::get('/logs',[Luggage_logController::class, "index"])
     ->name("logs.index");
@@ -105,6 +114,8 @@ Route::delete('/logs/{id}',[Luggage_logController::class, "destroy"])
     ->whereNumber("id")
     ->name("logs.destroy");
 
+//Airport
+
 Route::get('/airports',[AirportController::class, "index"])
     ->name("airports.index");
 
@@ -123,6 +134,8 @@ Route::delete('/airports/{id}',[AirportController::class, "destroy"])
     ->whereNumber("id")
     ->name("airports.destroy");
 
+//Airline
+
 Route::get('/airlines',[AirlineController::class, "index"])
     ->name("airlines.index");
 
@@ -140,3 +153,23 @@ Route::put('/airlines/{id}',[AirlineController::class, "update"])
 Route::delete('/airlines/{id}',[AirlineController::class, "destroy"])
     ->whereNumber("id")
     ->name("airlines.destroy");
+
+//Aircraft
+
+Route::get('/aircrafts',[AircraftController::class, "index"])
+    ->name("aircrafts.index");
+
+Route::get('/aircrafts/{id}',[AircraftController::class, "show"])
+    ->whereNumber("id")
+    ->name("aircrafts.show");
+
+Route::put('/aircrafts',[AircraftController::class, "store"])
+    ->name("aircrafts.store");
+
+Route::put('/aircrafts/{id}',[AircraftController::class, "update"])
+    ->whereNumber("id")  
+    ->name("aircrafts.update");
+
+Route::delete('/aircrafts/{id}',[AircraftController::class, "destroy"])
+    ->whereNumber("id")
+    ->name("aircrafts.destroy");
