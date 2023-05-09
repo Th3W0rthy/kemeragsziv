@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AirlineController;
 use App\Http\Controllers\AirportController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FlightController;
@@ -121,3 +122,21 @@ Route::put('/airports/{id}',[AirportController::class, "update"])
 Route::delete('/airports/{id}',[AirportController::class, "destroy"])
     ->whereNumber("id")
     ->name("airports.destroy");
+
+Route::get('/airlines',[AirlineController::class, "index"])
+    ->name("airlines.index");
+
+Route::get('/airlines/{id}',[AirlineController::class, "show"])
+    ->whereNumber("id")
+    ->name("airlines.show");
+
+Route::put('/airlines',[AirlineController::class, "store"])
+    ->name("airlines.store");
+
+Route::put('/airlines/{id}',[AirlineController::class, "update"])
+    ->whereNumber("id")  
+    ->name("airlines.update");
+
+Route::delete('/airlines/{id}',[AirlineController::class, "destroy"])
+    ->whereNumber("id")
+    ->name("airlines.destroy");
