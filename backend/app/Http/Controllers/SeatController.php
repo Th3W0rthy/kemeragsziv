@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\AirlineRequest;
-use App\Http\Resources\AirlineResource;
-use App\Models\Airline;
+use App\Http\Requests\SeatRequest;
+use App\Http\Resources\SeatResource;
+use App\Models\Seat;
 use Illuminate\Http\Request;
 
-class AirlineController extends Controller
+class SeatController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,21 +16,21 @@ class AirlineController extends Controller
      */
     public function index()
     {
-        $airline = Airline::all();
-        return AirlineResource::collection($airline);
+        $seats = Seat::all();
+        return SeatResource::collection($seats);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\AirlineRequest  $request
+     * @param  \Illuminate\Http\SeatRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AirlineRequest $request)
+    public function store(SeatRequest $request)
     {
         $data = $request->validated();
-        $newAirline = Airline::create($data);
-        return new AirlineResource($newAirline);
+        $newSeat = Seat::create($data);
+        return new SeatResource($newSeat);
     }
 
     /**
@@ -41,23 +41,23 @@ class AirlineController extends Controller
      */
     public function show($id)
     {
-        $airline = Airline::findOrFail($id);
-        return new AirlineResource($airline);
+        $seat = Seat::findOrFail($id);
+        return new SeatResource($seat);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\AirlineRequest  $request
+     * @param  \Illuminate\Http\SeatRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(AirlineRequest $request, $id)
+    public function update(SeatRequest $request, $id)
     {
         $data = $request->validated();
-        $airline = Airline::findOrFail($id);
-        if ($airline->update($data)) {
-            return new AirlineResource($airline);
+        $seat = Seat::findOrFail($id);
+        if ($seat->update($data)) {
+            return new SeatResource($seat);
         }
     }
 
@@ -69,7 +69,7 @@ class AirlineController extends Controller
      */
     public function destroy($id)
     {
-        $airline = Airline::findOrFail($id);
-        $airline->delete();
+        $seat = Seat::findOrFail($id);
+        $seat->delete();
     }
 }

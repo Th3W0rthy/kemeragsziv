@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AircraftRequest;
+use App\Http\Resources\AircraftResource;
+use App\Models\Aircraft;
 use Illuminate\Http\Request;
 
 class AircraftController extends Controller
@@ -13,18 +16,21 @@ class AircraftController extends Controller
      */
     public function index()
     {
-        //
+        $aircrafts = Aircraft::all();
+        return AircraftResource::collection($aircrafts);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\AircraftRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AircraftRequest $request)
     {
-        //
+        $data = $request->validated();
+        $newAircraft = Aircraft::create($data);
+        return new AircraftResource($newAircraft);
     }
 
     /**
@@ -35,19 +41,24 @@ class AircraftController extends Controller
      */
     public function show($id)
     {
-        //
+        $aircraft = Aircraft::findOrFail($id);
+        return new AircraftResource($aircraft);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\AircraftRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AircraftRequest $request, $id)
     {
-        //
+        $data = $request->validated();
+        $aircraft = Aircraft::findOrFail($id);
+        if ($aircraft->update($data)) {
+            return new AircraftResource($aircraft);
+        }
     }
 
     /**
@@ -58,6 +69,7 @@ class AircraftController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $aircraft = Aircraft::findOrFail($id);
+        $aircraft->delete();
     }
 }
