@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SeatRequest;
 use App\Http\Resources\SeatResource;
 use App\Models\Seat;
 use Illuminate\Http\Request;
@@ -22,12 +23,14 @@ class SeatController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\SeatRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SeatRequest $request)
     {
-        //
+        $data = $request->validated();
+        $newSeat = Seat::create($data);
+        return new SeatResource($newSeat);
     }
 
     /**
@@ -38,19 +41,24 @@ class SeatController extends Controller
      */
     public function show($id)
     {
-        //
+        $seat = Seat::findOrFail($id);
+        return new SeatResource($seat);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\SeatRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SeatRequest $request, $id)
     {
-        //
+        $data = $request->validated();
+        $seat = Seat::findOrFail($id);
+        if ($seat->update($data)) {
+            return new SeatResource($seat);
+        }
     }
 
     /**
@@ -61,6 +69,7 @@ class SeatController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $seat = Seat::findOrFail($id);
+        $seat->delete();
     }
 }

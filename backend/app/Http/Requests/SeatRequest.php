@@ -24,7 +24,10 @@ class SeatRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'aircraft_id' => "required|integer",
+            'class_id' => "required|integer",
+            'seat_row' => "required|integer",
+            'seat_col' => "required|integer",
         ];
     }
 }
