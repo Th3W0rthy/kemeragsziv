@@ -36,27 +36,19 @@ h5{
 }
 
 .search-bar {
-  margin:0;
-  padding:0;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  top:50%;
-  left:50%;
-  position: absolute;
-  transform: translate(-50%,-50%);
   border: 5px black solid;
   transition-duration: 0.2s;
 }
 //ahova irni akarsz arra vonatkozik
 .textbox {
   width: 0px;
-  padding: 0;
-  margin: 0;
   border: none;
   line-height: 40px;
-  font-size: 25px;
+  font-size: 14px;
   height:45px;
   background-color: transparent;
   outline: none;

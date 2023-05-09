@@ -15,13 +15,13 @@ class Seat extends Model
         return $this->hasMany(Ticket::class);
     }
 
-    public function classes()
+    public function class()
     {
-        return $this->hasMany(Classification::class);
+        return $this->belongsTo(Classification::class);
     }
 
-    public function aircrafts()
+    public function aircraft()
     {
-        return $this->hasMany(Aircraft::class);
+        return $this->belongsTo(Aircraft::class);
     }
 }

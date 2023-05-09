@@ -4,9 +4,11 @@ use App\Http\Controllers\AircraftController;
 use App\Http\Controllers\AirlineController;
 use App\Http\Controllers\AirportController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ClassController;
 use App\Http\Controllers\FlightController;
 use App\Http\Controllers\Luggage_logController;
 use App\Http\Controllers\LuggageController;
+use App\Http\Controllers\SeatController;
 use App\Http\Controllers\TicketController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -173,3 +175,43 @@ Route::put('/aircrafts/{id}',[AircraftController::class, "update"])
 Route::delete('/aircrafts/{id}',[AircraftController::class, "destroy"])
     ->whereNumber("id")
     ->name("aircrafts.destroy");
+
+//Seat
+
+Route::get('/seats',[SeatController::class, "index"])
+    ->name("seats.index");
+
+Route::get('/seats/{id}',[SeatController::class, "show"])
+    ->whereNumber("id")
+    ->name("seats.show");
+
+Route::put('/seats',[SeatController::class, "store"])
+    ->name("seats.store");
+
+Route::put('/seats/{id}',[SeatController::class, "update"])
+    ->whereNumber("id")  
+    ->name("seats.update");
+
+Route::delete('/seats/{id}',[SeatController::class, "destroy"])
+    ->whereNumber("id")
+    ->name("seats.destroy");
+
+//Class
+
+Route::get('/classes',[ClassController::class, "index"])
+    ->name("classes.index");
+
+Route::get('/classes/{id}',[ClassController::class, "show"])
+    ->whereNumber("id")
+    ->name("classes.show");
+
+Route::put('/classes',[ClassController::class, "store"])
+    ->name("classes.store");
+
+Route::put('/classes/{id}',[ClassController::class, "update"])
+    ->whereNumber("id")  
+    ->name("classes.update");
+
+Route::delete('/classes/{id}',[ClassController::class, "destroy"])
+    ->whereNumber("id")
+    ->name("classes.destroy");
