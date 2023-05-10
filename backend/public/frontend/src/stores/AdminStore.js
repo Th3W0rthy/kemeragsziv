@@ -9,13 +9,9 @@ export const useAdmin = defineStore('admin-store', {
         }
     },
     actions: {
-        async getAdmins() {
-            const admins = await http.get('user');
+        async getAdmin() {
+            const admins = await http.get('user',{header:{Authorization:`Bearer ${localStorage.getItem("token")}`}});
             this.admins = users.data.data;
-        },
-        async getAdmins(id) {
-            const admin = await http.get(`user/${id}`);
-            return admin.data.data;
         }
     }
 })
