@@ -65,7 +65,7 @@ class TicketSeeder extends Seeder
                 'address' => "Petőfi utca 111/b",
                 'tax_number' => null,
                 'price' => "50000",
-                'seat_id' => "3",
+                'seat_id' => "306",
             ],
         ]);
     }
