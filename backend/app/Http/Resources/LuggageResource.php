@@ -16,8 +16,8 @@ class LuggageResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'ticket' => $this->ticket,
-            'tag' => $this->tag,
+            //'ticket' => $this->ticket,
+            'tag' => $this->ticket->flight->number . "." . $this->ticket->flight->id . "." . $this->ticket->flight->airline->iata . "." . $this->ticket->user->id . "." . $this->id,
             'size' => $this->size,
             'price' => $this->price,
         ];
