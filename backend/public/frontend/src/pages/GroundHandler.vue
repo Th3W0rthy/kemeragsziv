@@ -1,7 +1,8 @@
 <template>
   <main class="container">
    gh
-   <qrcode-stream @init="onInit"  ></qrcode-stream>
+   <p>{{ decodedTag }}</p>
+   <qrcode-stream @init="onInit" @decode="onDecode" ></qrcode-stream>
   </main>
 </template>
 
@@ -11,6 +12,7 @@
     data() {
       return {
         error: '',
+        decodedTag: '',
       }
     },
     components: {
@@ -26,28 +28,31 @@
           // successfully initialized
           } catch (error) {
           if (error.name === 'NotAllowedError') {
-            $this.error = "user denied camera access permisson";
-            alert($this.error);
+            error = "user denied camera access permisson";
+            alert(error);
           } else if (error.name === 'NotFoundError') {
-            $this.error = "no suitable camera device installed";
-            alert($this.error);
+            error = "no suitable camera device installed";
+            alert(error);
           } else if (error.name === 'NotSupportedError') {
-            $this.error = "page is not served over HTTPS (or localhost)";
-            alert($this.error);
+            error = "page is not served over HTTPS (or localhost)";
+            alert(error);
           } else if (error.name === 'NotReadableError') {
-            $this.error = "maybe camera is already in use";
-            alert($this.error);
+            error = "maybe camera is already in use";
+            alert(error);
           } else if (error.name === 'OverconstrainedError') {
-            $this.error = "did you requested the front camera although there is none?";
-            alert($this.error);
+            error = "did you requested the front camera although there is none?";
+            alert(error);
           } else if (error.name === 'StreamApiNotSupportedError') {
-            $this.error = "browser seems to be lacking features";
-            alert($this.error);
+            error = "browser seems to be lacking features";
+            alert(error);
           }
         } finally {
           // hide loading indicator
         }
       }
+    },
+    onDecode(decodedString) {
+      this.decodedTag = decodedString;
     }
   }
 </script>
