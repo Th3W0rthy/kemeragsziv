@@ -1,8 +1,9 @@
 <template>
   <main class="container">
    gh
-   <p>{{ decodedTag }}</p>
-   <qrcode-stream @init="onInit" @decode="onDecode" ></qrcode-stream>
+   <div class="qrcode"  v-show="show">
+    <qrcode-stream @init="onInit" @decode="onDecode" ></qrcode-stream>
+   </div>
   </main>
 </template>
 
@@ -13,6 +14,7 @@
       return {
         error: '',
         decodedTag: '',
+        show: true,
       }
     },
     components: {
@@ -49,10 +51,12 @@
         } finally {
           // hide loading indicator
         }
+      },
+      onDecode(decodedString) {
+        this.decodedTag = decodedString;
+        alert(this.decodedTag);
+        this.show = false;
       }
-    },
-    onDecode(decodedString) {
-      this.decodedTag = decodedString;
     }
   }
 </script>
