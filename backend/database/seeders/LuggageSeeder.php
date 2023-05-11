@@ -20,24 +20,28 @@ class LuggageSeeder extends Seeder
                 'ticket_id' => "1",
                 'tag' => "",
                 'size' => "M",
+                'desc' => "",
                 'price' => "10000",
             ],
             [
                 'ticket_id' => "2",
                 'tag' => "",
                 'size' => "M",
+                'desc' => "",
                 'price' => "10000",
             ],
             [
                 'ticket_id' => "3",
                 'tag' => "",
                 'size' => "M",
+                'desc' => "",
                 'price' => "10000",
             ],
             [
                 'ticket_id' => "3",
                 'tag' => "",
                 'size' => "L",
+                'desc' => "",
                 'price' => "20000",
             ],
         ]);

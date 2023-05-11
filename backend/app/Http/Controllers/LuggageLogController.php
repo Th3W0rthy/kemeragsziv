@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Luggage_logRequest;
-use App\Http\Resources\Luggage_logResource;
-use App\Models\Luggage_log;
+use App\Http\Requests\LuggageLogRequest;
+use App\Http\Resources\LuggageLogResource;
+use App\Models\LuggageLog;
 use Illuminate\Http\Request;
 
-class Luggage_logController extends Controller
+class LuggageLogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,21 +16,21 @@ class Luggage_logController extends Controller
      */
     public function index()
     {
-        $logs = Luggage_log::all();
-        return Luggage_logResource::collection($logs);
+        $logs = LuggageLog::all();
+        return LuggageLogResource::collection($logs);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Luggage_logRequest  $request
+     * @param  \Illuminate\Http\LuggageLogRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Luggage_logRequest $request)
+    public function store(LuggageLogRequest $request)
     {
         $data = $request->validated();
-        $newLog = Luggage_log::create($data);
-        return new Luggage_logResource($newLog);
+        $newLog = LuggageLog::create($data);
+        return new LuggageLogResource($newLog);
     }
 
     /**
@@ -41,23 +41,23 @@ class Luggage_logController extends Controller
      */
     public function show($id)
     {
-        $log = Luggage_log::findOrFail($id);
-        return new Luggage_logResource($log);
+        $log = LuggageLog::findOrFail($id);
+        return new LuggageLogResource($log);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Luggage_logRequest  $request
+     * @param  \Illuminate\Http\LuggageLogRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Luggage_logRequest $request, $id)
+    public function update(LuggageLogRequest $request, $id)
     {
         $data = $request->validated();
-        $log = Luggage_log::findOrFail($id);
+        $log = LuggageLog::findOrFail($id);
         if ($log->update($data)) {
-            return new Luggage_logResource($log);
+            return new LuggageLogResource($log);
         }
     }
 
@@ -69,7 +69,7 @@ class Luggage_logController extends Controller
      */
     public function destroy($id)
     {
-        $log = Luggage_log::findOrFail($id);
+        $log = LuggageLog::findOrFail($id);
         $log->delete();
     }
 }

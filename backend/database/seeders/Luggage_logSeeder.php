@@ -21,15 +21,15 @@ class Luggage_logSeeder extends Seeder
                 'airport_id' => "1",
             ],
             [
-                'luggage_id' => "1",
+                'luggage_id' => "2",
                 'airport_id' => "1",
             ],
             [
-                'luggage_id' => "1",
+                'luggage_id' => "3",
                 'airport_id' => "1",
             ],
             [
-                'luggage_id' => "1",
+                'luggage_id' => "4",
                 'airport_id' => "1",
             ],
         ]);

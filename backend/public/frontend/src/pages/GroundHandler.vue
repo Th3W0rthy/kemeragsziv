@@ -1,9 +1,45 @@
 <template>
   <main class="container">
-   gh
-   <div class="qrcode"  v-show="show">
-    <qrcode-stream @init="onInit" @decode="onDecode" ></qrcode-stream>
-   </div>
+    <div class="col">
+      <div class="row qrcode"  v-show="show">
+        <qrcode-stream @init="onInit" @decode="onDecode" ></qrcode-stream>
+      </div>
+      <!--
+        !show
+      -->
+      <div class="row" v-show="show">
+        <h1>Luggage</h1>
+        <label for="luggageTag">Luggage tag</label>
+        <input type="text" name="luggageTag" id="luggageTag" :value="decodedTag" disabled>
+        <label for="">Luggage owner</label>
+        <input type="text" name="" id="">
+        <label for="">Luggage owner's phone</label>
+        <input type="text" name="" id="">
+        <label for="">Luggage owner's email</label>
+        <input type="text" name="" id="">
+
+        <table class="table flights_table table-responsive table-striped table-dark">
+          <thead>
+              <tr>
+                  <th>Luggage location</th>
+                  <th>Created_at</th>
+                  <th>Updated_at</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td> Budapest</td>
+                <td>
+                  <input type="datetime-local" name="" id="">
+                </td>
+                <td>
+                  <input type="datetime-local" name="" id="">
+                </td>
+              </tr>
+          </tbody>
+      </table>
+      </div>
+    </div>
   </main>
 </template>
 

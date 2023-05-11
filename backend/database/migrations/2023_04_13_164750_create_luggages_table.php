@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('ticket_id');
             $table->string('tag', 255);
             $table->char('size');
+            $table->text('desc')->nullable();
             $table->integer('price');
             //$table->timestamps();
         });

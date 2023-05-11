@@ -4,11 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Luggage_log extends Model
+class LuggageLog extends Model
 {
     protected $table = "luggages_logs";
-    protected $fillable = ['luggage_id','airport_id','created_at','updated_at'];
-    public $timestamps = false;
+    protected $fillable = ['luggage_id','airport_id'];
+    public $timestamps = true;
 
     public function luggage()
     {

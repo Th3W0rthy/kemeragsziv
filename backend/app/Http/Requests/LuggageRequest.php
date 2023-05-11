@@ -27,6 +27,7 @@ class LuggageRequest extends FormRequest
             'ticket_id' => "required|integer",
             'tag' => "required|string|min:1|max:255",
             'size' => "required|string|min:1|max:1",
+            'desc' => "min:1|text",
             'price' => "required|integer|min:1",
         ];
     }

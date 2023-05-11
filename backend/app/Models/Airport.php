@@ -12,7 +12,7 @@ class Airport extends Model
 
     public function luggage_logs()
     {
-        return $this->hasMany(Luggage_log::class);
+        return $this->hasMany(LuggageLog::class);
     }
 
     public function departureFlight()
