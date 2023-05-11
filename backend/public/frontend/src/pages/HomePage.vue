@@ -14,7 +14,7 @@ async function onClick(id)
 }
 //tovabbi informacio gombhoz
 async function showFlight(id){
-  const flightMore = await FlightStore.getFlight(id);
+  const flightMore = await FlightStore.getFlight(id); //minek van ez itt ?
 }
 
 onMounted(FlightStore.getFlights);
@@ -27,7 +27,7 @@ onMounted(FlightStore.getFlights);
         <div id="filter" class="bg-dark">
           <h5 id="h5">Filters</h5> 
         </div>
-        <div class="search-bar">
+        <div class="search-bar">  
           <input type="text" class="textbox" placeholder="type here..."/>
           <a class = "search-btn" href="#" @click="onClick(flight.id)">
             <p>Search</p>
