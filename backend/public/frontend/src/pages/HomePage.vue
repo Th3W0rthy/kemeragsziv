@@ -6,7 +6,13 @@ import { onMounted } from 'vue';
 const FlightStore = useFlight();
 
 const emptyString = "";
-
+//szures/kereseshez
+async function onClick(id)
+{
+ const flight = await FlightStore.getFlight(id);
+ alert(flight.description);
+}
+//tovabbi informacio gombhoz
 async function showFlight(id){
   const flightMore = await FlightStore.getFlight(id);
 }
@@ -23,7 +29,7 @@ onMounted(FlightStore.getFlights);
         </div>
         <div class="search-bar">
           <input type="text" class="textbox" placeholder="type here..."/>
-          <a class = "search-btn" href="#">
+          <a class = "search-btn" href="#" @click="onClick(flight.id)">
             <p>Search</p>
           </a>
         </div>

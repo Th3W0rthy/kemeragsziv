@@ -25,14 +25,11 @@ a:hover{
   color: white;
   text-align: center;
   margin-top: 20px;
+  
 }
 
 .flights_table {
   margin-top: 20px;
-}
-h5{
-  margin-bottom:5px;
-  color: aqua;
 }
 
 .search-bar {
@@ -94,7 +91,7 @@ h5{
 }
 
 .search-btn:hover {
-  background-color: black;
+  background-color: rgb(8, 68, 208);
   transition-duration: 0.2s;
 }
 .search-btn:hover > p {
