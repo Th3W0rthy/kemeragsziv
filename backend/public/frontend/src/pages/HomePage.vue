@@ -29,7 +29,7 @@ onMounted(FlightStore.getFlights);
           <h5 id="h5">Filters</h5> 
         </div>
         <div class="search-bar">  
-          <input type="text" class="textbox" v-model="flight" placeholder="type here..."/>
+          <input type="text" class="textbox" v-model="flight" placeholder="type your destination"/>
           <a class = "search-btn" href="#" @click="onClick(flight)">
             <p>Search</p>
           </a>
