@@ -50,16 +50,35 @@ namespace KemeragszivTest
             Assert.IsTrue(registerLink.Displayed);
         }
         [Test]
-        public void LoginEmailTest() {
+        public void LoginFalseEmailTest() {
             driver.FindElement(By.LinkText("Login")).Click();
             IWebElement emailInput = driver.FindElement(By.Id("email"));
-            
             emailInput.Clear();
             emailInput.SendKeys("asd");
             driver.FindElement(By.Id("password")).Click();
             IWebElement ErrorMessage = driver.FindElement(By.Id("EmailErrormessage"));
             Assert.IsTrue(ErrorMessage.Displayed);
             Assert.AreEqual("email must be a valid email", ErrorMessage.Text);
+        }
+        [Test]
+        public void LoginTrueEmailTest()
+        {
+            driver.FindElement(By.LinkText("Login")).Click();
+            IWebElement emailInput = driver.FindElement(By.Id("email"));
+            emailInput.Clear();
+            emailInput.SendKeys("sagidaniel24@gmail.com");
+            emailInput.Click();
+            Thread.Sleep(10000);
+            IWebElement ErrorMessage = null;
+            try
+            {
+                ErrorMessage = driver.FindElement(By.Id("errorMessageId"));
+            }
+            catch (NoSuchElementException)
+            {
+                
+            }
+            Assert.IsNull(ErrorMessage);
         }
     }
 }
