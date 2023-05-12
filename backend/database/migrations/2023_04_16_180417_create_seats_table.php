@@ -19,7 +19,6 @@ return new class extends Migration
             $table->foreignId('class_id');
             $table->integer('seat_row');
             $table->integer('seat_col');
-            //$table->timestamps();
         });
     }
 

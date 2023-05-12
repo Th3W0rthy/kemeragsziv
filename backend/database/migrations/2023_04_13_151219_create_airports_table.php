@@ -24,7 +24,6 @@ return new class extends Migration
             $table->string('continent', 25);
             $table->string('country', 50);
             $table->string('settlement', 255);
-            //$table->timestamps();
         });
     }
 

@@ -18,7 +18,6 @@ return new class extends Migration
             $table->foreignId('airline_id');
             $table->string('manufacturer', 255);
             $table->string('model', 50);
-            //$table->timestamps();
         });
     }
 

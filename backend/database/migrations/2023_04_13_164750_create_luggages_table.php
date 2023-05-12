@@ -20,7 +20,6 @@ return new class extends Migration
             $table->char('size');
             $table->text('desc')->nullable();
             $table->integer('price');
-            //$table->timestamps();
         });
     }
 

@@ -16,7 +16,6 @@ class LuggageResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            //'ticket' => $this->ticket,
             'tag' => $this->tag(),
             'luggageData' => $this->luggageData(),
             'luggage_logs' => LogResource::collection($this->luggage_logs),
