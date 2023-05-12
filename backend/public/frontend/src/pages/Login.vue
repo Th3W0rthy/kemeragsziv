@@ -20,29 +20,18 @@
    
 </template>
 <script setup >
+import { useAuthStore } from '@/stores/AuthStore.js';
 import * as yup from 'yup';
 import {Form as VFrom, Field, ErrorMessage} from  "vee-validate";
+
+const authStore = useAuthStore();
+
+const onSubmit = async (userdata) => {
+      await authStore.login(userdata);
+    };
 
 const schema = yup.object({
     email: yup.string().email().required("The field is mandatory"),
     password: yup.string().required("The field is mandatory"),
 });
-</script>
-<script>
-import { useAuthStore } from '@/stores/AuthStore.js';
-
-export default {
-  name: 'LoginForm',
-  setup() {
-    const authStore = useAuthStore();
-
-    const onSubmit = async (userdata) => {
-      await authStore.login(userdata);
-    };
-
-    return {
-      onSubmit,
-    };
-  },
-};
 </script>
