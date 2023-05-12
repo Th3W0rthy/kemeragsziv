@@ -20,6 +20,16 @@ class Luggage extends Model
         return $this->belongsTo(Ticket::class);
     }
 
+    public function luggageData()
+    {
+        return [
+            'owner' => $this->ticket->name,
+            'phone' => $this->ticket->phone,
+            'email' => $this->ticket->email,
+            'address' => $this->ticket->country . ", " . $this->ticket->postcode . " " . $this->ticket->settlement . ", " . $this->ticket->address, 
+        ];
+    }
+
     public function tag()
     {
         return 
