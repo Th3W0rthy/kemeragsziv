@@ -13,7 +13,7 @@ export const useFlight = defineStore('flight-store', {
           if(this.filters === ''){
             return this.flights;
           }
-          return this.flights.filter((flight) => flight.from.includes(this.filter));
+          return this.flights.filter((flight) => flight.to.includes(this.filter));
         }
       },
     actions: {
