@@ -18,7 +18,7 @@ export const router = createRouter({
       name: 'Admin',
       component: () => import('@/pages/Admin.vue'),
       meta: {
-        requiresAuth: false,
+        requiresAuth: true,
         title: 'Admin'
       },
     },
@@ -36,8 +36,10 @@ export const router = createRouter({
       name: 'groundhandler',
       component: () => import('@/pages/GroundHandler.vue'),
       meta: {
-        requiresAuth: false,
-        title: 'Ground Handler'
+        requiresAuth: true,
+        title: 'Ground Handler',
+        role: 'gh',
+        permissions: ['create', 'edit', 'delete']
       },
     },
     {
@@ -45,8 +47,10 @@ export const router = createRouter({
       name: 'flightoperator',
       component: () => import('@/pages/FlightOperator.vue'),
       meta: {
-        requiresAuth: false,
-        title: 'Flight Operator'
+        requiresAuth: true,
+        title: 'Flight Operator',
+        role: 'fo',
+        permissions: ['create', 'edit', 'delete']
       },
     },
     {
@@ -81,8 +85,9 @@ export const router = createRouter({
       name:'Account',
       component: () => import('@/pages/User.vue'),
       meta:{
-        requiresAuth: false,
-        title: 'Accunt'
+        requiresAuth: true,
+        title: 'Accunt',
+        permissions: ['create', 'edit', 'delete']
       }
     }
   ]
