@@ -23,9 +23,7 @@ export const useAuthStore = defineStore({
     },
     async login(useradata) {
         try {
-          const response = await axios.post('http://localhost:8881/api/authenticate', 
-            useradata
-          );
+          const response = await axios.post('http://localhost:8881/api/authenticate',useradata);
           if (response.status === 200 && response.data.token) {
             this.user = { email: email}
             this.token = response.data.token;
@@ -35,9 +33,10 @@ export const useAuthStore = defineStore({
           console.error(error);
         }
       },
-      logout() {
+    async logout() {
         this.user = null;
         this.isAuthenticated = false;
+        localStorage.setItem("token",null);
       },
   },
   getters: {

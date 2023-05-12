@@ -5,7 +5,7 @@
             <div class="form-group">
                 <label for="email">Email</label>
                 <Field type="text" name="email" id="email" class="form-control" rules="required"/> 
-                <ErrorMessage name="email" as="div" class="alert alert-danger m-1"/>
+                <ErrorMessage name="email" id="EmailErrormessage" as="div" class="alert alert-danger m-1"/>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>

@@ -75,6 +75,15 @@ export const router = createRouter({
         requiresAuth: false,
         title: 'FlightReservation'
       }
+    },
+    {
+      path:'/user',
+      name:'Account',
+      component: () => import('@/pages/User.vue'),
+      meta:{
+        requiresAuth: false,
+        title: 'Accunt'
+      }
     }
   ]
 })
