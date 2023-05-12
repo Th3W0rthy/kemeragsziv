@@ -27,7 +27,7 @@ export const useFlight = defineStore('flight-store', {
             return flight.data.data;
         },
         setFilter(flight){
-            this.setFilter = flight;
+            this.filter = flight;
         }
     }
 })
