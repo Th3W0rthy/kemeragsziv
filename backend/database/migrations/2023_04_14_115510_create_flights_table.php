@@ -25,7 +25,6 @@ return new class extends Migration
             $table->integer('cost');
             $table->integer('basic_price');
             $table->string('ground_handler',255);
-            //$table->timestamps();
         });
     }
 

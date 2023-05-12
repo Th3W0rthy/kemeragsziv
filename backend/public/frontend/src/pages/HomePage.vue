@@ -1,20 +1,21 @@
 <script setup>
 import FlightTable from "../components/FlightTable.vue";
 import { useFlight } from '@/stores/FlightStore.js';
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 
 const FlightStore = useFlight();
 
 const emptyString = "";
+const flight = ref("");
 //szures/kereseshez
-async function onClick(id)
+async function onClick(flight)
 {
- const flight = await FlightStore.getFlight(id);
- alert(flight.description);
+ FlightStore.setFilter(flight);
 }
+
 //tovabbi informacio gombhoz
 async function showFlight(id){
-  const flightMore = await FlightStore.getFlight(id); //minek van ez itt ?
+  const flightMore = await FlightStore.getFlight(id);
 }
 
 onMounted(FlightStore.getFlights);
@@ -28,8 +29,8 @@ onMounted(FlightStore.getFlights);
           <h5 id="h5">Filters</h5> 
         </div>
         <div class="search-bar">  
-          <input type="text" class="textbox" placeholder="type here..."/>
-          <a class = "search-btn" href="#" @click="onClick(flight.id)">
+          <input type="text" class="textbox" v-model="flight" placeholder="type your destination"/>
+          <a class = "search-btn" href="#" @click="onClick(flight)">
             <p>Search</p>
           </a>
         </div>

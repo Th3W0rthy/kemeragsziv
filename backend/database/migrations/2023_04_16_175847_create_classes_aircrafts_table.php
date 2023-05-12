@@ -17,7 +17,6 @@ return new class extends Migration
             //$table->id();
             $table->foreignId('class_id')->constrained("classes");
             $table->foreignId('aircraft_id')->constrained("aircrafts");
-            //$table->timestamps();
         });
     }
 

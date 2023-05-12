@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('website', 255)->nullable();
             $table->string('iata', 2)->nullable();
             $table->string('icao', 3)->nullable();
-            //$table->timestamps();
         });
     }
 
