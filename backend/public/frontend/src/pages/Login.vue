@@ -10,7 +10,7 @@
             <div class="form-group">
                 <label for="password">Password</label>
                 <Field type="password" name="password" id="password" class="form-control" rules="required"/> 
-                <ErrorMessage name="password" as="div" class="alert alert-danger m-1"/>
+                <ErrorMessage name="password" as="div" id="PasswordErrormessage" class="alert alert-danger m-1"/>
             </div>
             <div class="form-group">
                 <input type="submit" value="Login" class="btn btn-success mt-3" >

@@ -5,17 +5,17 @@
             <div class="form-group">
                 <label for="email">Email</label>
                 <Field type="text" name="email" id="email" class="form-control" rules="required"/> 
-                <ErrorMessage name="email" as="div" class="alert alert-danger m-1"/>
+                <ErrorMessage name="email" as="div" id="EmailErrormessage" class="alert alert-danger m-1"/>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
                 <Field type="password" name="password" id="password" class="form-control" rules="required"/> 
-                <ErrorMessage name="password" as="div" class="alert alert-danger m-1"/>
+                <ErrorMessage name="password" as="div" id="PasswordErrormessage" class="alert alert-danger m-1"/>
             </div>
             <div class="form-group">
                 <label for="password_confirmation">Again password</label>
                 <Field type="password" name="password_confirmation" id="password_confirmation" class="form-control" rules="required"/> 
-                <ErrorMessage name="password_confirmation" as="div" class="alert alert-danger m-1"/>
+                <ErrorMessage name="password_confirmation" as="div" id="AgainPasswordErrormessage" class="alert alert-danger m-1"/>
             </div>
             <input type="submit" value="Registration" class="btn btn-primary mt-3">
         </VFrom>  

@@ -68,7 +68,7 @@ namespace KemeragszivTest
             emailInput.Clear();
             emailInput.SendKeys("sagidaniel24@gmail.com");
             emailInput.Click();
-            Thread.Sleep(10000);
+            Thread.Sleep(1000);
             IWebElement ErrorMessage = null;
             try
             {
@@ -77,6 +77,26 @@ namespace KemeragszivTest
             catch (NoSuchElementException)
             {
                 
+            }
+            Assert.IsNull(ErrorMessage);
+        }
+        [Test]
+        public void RegistrationFalseEmailTest()
+        {
+            driver.FindElement(By.LinkText("Register")).Click();
+            IWebElement emailInput = driver.FindElement(By.Id("email"));
+            emailInput.Clear();
+            emailInput.SendKeys("sagidaniel24@gmail.com");
+            emailInput.Click();
+            Thread.Sleep(1000);
+            IWebElement ErrorMessage = null;
+            try
+            {
+                ErrorMessage = driver.FindElement(By.Id("errorMessageId"));
+            }
+            catch (NoSuchElementException)
+            {
+
             }
             Assert.IsNull(ErrorMessage);
         }
