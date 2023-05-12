@@ -4,11 +4,11 @@ import { onMounted } from 'vue';
 
 const FlightStore = useFlight();
 
-async function showFlight(id) {
+async function onClick(id) {
   const flight = await FlightStore.getFlight(id);
   //teszt
   window.open("http://localhost:5174/flightreservation");
-  alert(flight.number);
+  alert(flight.description);
 }
 
 onMounted(FlightStore.getFlights);
@@ -34,7 +34,7 @@ const props = defineProps({
     <td>{{ airline }}</td>
     <td>{{ flight_number }}</td>
     <td>
-        <button class="btn btn-primary" @click="showFlight(flight_id)">
+        <button class="btn btn-primary" @click="onClick(flight.id)">
         More
         </button>
     </td>

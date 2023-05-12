@@ -26,7 +26,7 @@ onMounted(FlightStore.getFlights);
         </tr>
     </thead>
     <tbody>
-        <flight-row v-for="flight in FlightStore.flights" :key="flight.id" :flight_id="flight.id" :departure="flight.departure" :arrival="flight.arrival" :from="flight.from" :to="flight.to" :airline="flight.airline" :flight_number="flight.number" ></flight-row>
+        <flight-row v-for="flight in FlightStore.filteredFlights" :key="flight.id" :flight_id="flight.id" :departure="flight.departure" :arrival="flight.arrival" :from="flight.from" :to="flight.to" :airline="flight.airline" :flight_number="flight.number" ></flight-row>
     </tbody>
 </table>
 </template>
