@@ -81,7 +81,7 @@ namespace KemeragszivTest
             Assert.IsNull(ErrorMessage);
         }
         [Test]
-        public void RegistrationFalseEmailTest()
+        public void RegistrationTrueEmailTest()
         {
             driver.FindElement(By.LinkText("Register")).Click();
             IWebElement emailInput = driver.FindElement(By.Id("email"));
@@ -99,6 +99,17 @@ namespace KemeragszivTest
 
             }
             Assert.IsNull(ErrorMessage);
+        }
+        public void RegistrationFalseEmailTest()
+        {
+            driver.FindElement(By.LinkText("Register")).Click();
+            IWebElement emailInput = driver.FindElement(By.Id("email"));
+            emailInput.Clear();
+            emailInput.SendKeys("asd");
+            driver.FindElement(By.Id("password")).Click();
+            IWebElement ErrorMessage = driver.FindElement(By.Id("EmailErrormessage"));
+            Assert.IsTrue(ErrorMessage.Displayed);
+            Assert.AreEqual("email must be a valid email", ErrorMessage.Text);
         }
     }
 }
