@@ -24,14 +24,14 @@ namespace KemeragszivTest
         }
 
         [Test]
-        public void NavBar_DisplayedCorrectly()
+        public void NavBar_DisplayedCorrectlyTest()
         {
             IWebElement navbar = driver.FindElement(By.ClassName("navbar"));
             Assert.IsTrue(navbar.Displayed);
         }
 
         [Test]
-        public void NavBar_ContainsLinks()
+        public void NavBarLinksTest()
         {
             IWebElement flightsLink = driver.FindElement(By.LinkText("Flights"));
             IWebElement luggageLocationLink = driver.FindElement(By.LinkText("Luggage location"));
@@ -48,6 +48,18 @@ namespace KemeragszivTest
             Assert.IsTrue(adminLink.Displayed);
             Assert.IsTrue(loginLink.Displayed);
             Assert.IsTrue(registerLink.Displayed);
+        }
+        [Test]
+        public void LoginEmailTest() {
+            driver.FindElement(By.LinkText("Login")).Click();
+            IWebElement emailInput = driver.FindElement(By.Id("email"));
+            
+            emailInput.Clear();
+            emailInput.SendKeys("asd");
+            driver.FindElement(By.Id("password")).Click();
+            IWebElement ErrorMessage = driver.FindElement(By.Id("EmailErrormessage"));
+            Assert.IsTrue(ErrorMessage.Displayed);
+            Assert.AreEqual("email must be a valid email", ErrorMessage.Text);
         }
     }
 }
