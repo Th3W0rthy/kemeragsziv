@@ -13,7 +13,7 @@
                 <ErrorMessage name="password" as="div" id="PasswordErrormessage" class="alert alert-danger m-1"/>
             </div>
             <div class="form-group">
-                <label for="password_confirmation">Again password</label>
+                <label for="password_confirmation">Password confirmation</label>
                 <Field type="password" name="password_confirmation" id="password_confirmation" class="form-control" rules="required"/> 
                 <ErrorMessage name="password_confirmation" as="div" id="AgainPasswordErrormessage" class="alert alert-danger m-1"/>
             </div>
