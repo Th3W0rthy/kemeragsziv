@@ -4,19 +4,19 @@
       <div class="row qrcode"  v-show="show">
         <qrcode-stream @init="onInit" @decode="onDecode" ></qrcode-stream>
       </div>
-      <!--
-        !show
-      -->
-      <div class="row" v-show="show">
-        <h1>Luggage</h1>
+      <div class="row" v-show="!show" v-for="luggage in LuggageStore.luggages" :key="luggage.id">
+        <div class="row" v-show="luggage.tag == decodedTag">
+          <h1>Luggage</h1>
         <label for="luggageTag">Luggage tag</label>
         <input type="text" name="luggageTag" id="luggageTag" :value="decodedTag" disabled>
-        <label for="">Luggage owner</label>
-        <input type="text" name="" id="">
-        <label for="">Luggage owner's phone</label>
-        <input type="text" name="" id="">
-        <label for="">Luggage owner's email</label>
-        <input type="text" name="" id="">
+        <label for="LuggageOwner">Luggage owner</label>
+        <input type="text" name="LuggageOwner" id="LuggageOwner" :value="luggage.luggageData.owner" disabled>
+        <label for="LuggageOwnerPhone">Luggage owner's phone</label>
+        <input type="text" name="LuggageOwnerPhone" id="LuggageOwnerPhone" :value="luggage.luggageData.phone" disabled>
+        <label for="LuggageOwnerEmail">Luggage owner's email</label>
+        <input type="text" name="LuggageOwnerEmail" id="LuggageOwnerEmail" :value="luggage.luggageData.email" disabled>
+        <label for="LuggageOwnerAddress">Luggage owner's address</label>
+        <input type="text" name="LuggageOwnerAddress" id="LuggageOwnerAddress" :value="luggage.luggageData.address" disabled>
 
         <table class="table flights_table table-responsive table-striped table-dark">
           <thead>
@@ -27,24 +27,34 @@
               </tr>
           </thead>
           <tbody>
-              <tr>
-                <td> Budapest</td>
+              <tr v-for="(log, index) in luggage.luggage_logs" :key="index">
+                <td> {{log.airport}} </td>
                 <td>
-                  <input type="datetime-local" name="" id="">
+                  <input type="datetime-local" :value="log.created_at" name="created_at" id="created_at">
                 </td>
                 <td>
-                  <input type="datetime-local" name="" id="">
+                  <input type="datetime-local" :value="log.updated_at" name="updated_at" id="updated_at">
                 </td>
               </tr>
           </tbody>
       </table>
       </div>
+        </div>
     </div>
   </main>
 </template>
 
-<script>
+<script setup>
+  import { onMounted } from 'vue';
+  import { useLuggage } from '../stores/LuggageStore';
   import { QrcodeStream } from 'vue3-qrcode-reader';
+
+  const LuggageStore = useLuggage();
+
+  onMounted(LuggageStore.getLuggages);
+</script>
+
+<script>
   export default {
     data() {
       return {
@@ -90,7 +100,7 @@
       },
       onDecode(decodedString) {
         this.decodedTag = decodedString;
-        alert(this.decodedTag);
+        //alert(this.decodedTag);
         this.show = false;
       }
     }
