@@ -107,6 +107,10 @@ El kell indítani a dev szervert.
 npm run dev
 ```
 
+### Adatbázis: táblák, kapcsolatok
+
+![Alt text](https://cdn.discordapp.com/attachments/1020223836802793503/1107666739753406464/Vizsgaremek_1.png)
+
 ### További információk
 
 A laravelhez és a vuehoz is tartozik egy-egy bővebb ismertető Readme fájl.
