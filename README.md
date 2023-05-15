@@ -60,7 +60,7 @@ Első futtatáskor kell ezt használi. Utána ha nem módosítjük a dockerfile-
 docker compose up -d
 ```
 ```bash
-docker docker compose -f docker-compose.yml -f docker-compose.dev.yml  up -d
+docker compose -f docker-compose.yml -f docker-compose.dev.yml  up -d
 ```
 ### Laravel projekt indítása konténeren kívülről
 
@@ -111,7 +111,31 @@ A QR code működéséhez telepíteni kell a qr code olvasót.
 ```bash
 npm install vue3-qrcode-reader
 ```
+### Minta adatok
 
+Felhasználónév:
+tesztelek
+
+email
+```bash
+tesztelek@gmail.com
+```
+jelszó
+```bash
+jelszo12345
+```
+
+Felhasználónév:
+repulunk
+
+email
+```bash
+vasszoltan@gmail.com
+```
+jelszó
+```bash
+password12345
+```
 
 ### Adatbázis: táblák, kapcsolatok
 
