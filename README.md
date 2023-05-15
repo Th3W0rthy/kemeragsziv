@@ -110,4 +110,5 @@ npm run dev
 ### További információk
 
 A laravelhez és a frontendhez is tartozik egy-egy bővebb ismertető Readme fájl.
-Laravelhez a `backend mappán belül` található, míg a frontendhez a `backend mappán` és azon belül a `public mappában` található a Readme fájl.
+Laravelhez a `backend mappán belül` található [a link](https://github.com/Th3W0rthy/kemeragsziv/tree/main/backend#readme), míg a frontendhez a `backend` azon belül a `public` és azon belül a `frontend` mappában található a Readme fájl [a link](https://github.com/Th3W0rthy/kemeragsziv/tree/main/backend/public/frontend#readme).
+
