@@ -143,7 +143,7 @@ password12345
 
 ### Adatbázis: táblák, kapcsolatok
 
-![Alt text](https://cdn.discordapp.com/attachments/1020223836802793503/1107666739753406464/Vizsgaremek_1.png)
+![Alt text](https://cdn.discordapp.com/attachments/1020223836802793503/1107723231076556812/Vizsgaremek_2.png)
 
 ### További információk
 
