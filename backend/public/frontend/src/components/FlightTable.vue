@@ -22,7 +22,6 @@ onMounted(FlightStore.getFlights);
             <th>To</th>
             <th>Airline</th>
             <th>Flight number</th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
