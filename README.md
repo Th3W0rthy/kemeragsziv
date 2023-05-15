@@ -96,8 +96,8 @@ php artisan migrate:fresh --seed
 ```
 
 ### Vue projekt indítása
-Be kell lépni a `backend`-en belül a `public`-ba és a `frontend`-be
-Telepíteni kell a `vite`-t.
+Be kell lépni a `backend`-en belül a `public`-ba és a `frontend`-be,
+majd itt telepíteni kell a `vite`-t.
 ```bash
 npm install
 ```
