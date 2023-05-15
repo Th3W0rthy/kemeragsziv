@@ -102,16 +102,20 @@ majd itt telepíteni kell a `vite`-t.
 npm install
 ```
 
+A QR code működéséhez telepíteni kell a qr code olvasót.
+```bash
+npm install vue3-qrcode-reader
+```
+
 El kell indítani a dev szervert.
 ```bash
 npm run dev
 ```
 
-A QR code működéséhez telepíteni kell a qr code olvasót.
-```bash
-npm install vue3-qrcode-reader
-```
+
 ### Minta adatok
+A minta adatokat a `backend` mappán belül a `database` és azon belül a `seeders`-ben
+a `UserSeeder` fájlban találhatóak.
 
 Felhasználónév:
 tesztelek
