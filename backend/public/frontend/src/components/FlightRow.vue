@@ -33,10 +33,5 @@ const props = defineProps({
     <td>{{ to }}</td>
     <td>{{ airline }}</td>
     <td>{{ flight_number }}</td>
-    <td>
-        <button class="btn btn-primary" @click="onClick(flight.id)">
-        More
-        </button>
-    </td>
 </tr>
 </template>
