@@ -106,3 +106,8 @@ El kell indítani a dev szervert.
 ```bash
 npm run dev
 ```
+
+### További információk
+
+A laravelhez és a frontendhez is tartozik egy-egy bővebb ismertető Readme fájl.
+Laravelhez a `backend mappán belül` található, míg a frontendhez a `backend mappán` és azon belül a `public mappában` található a Readme fájl.
