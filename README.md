@@ -107,6 +107,12 @@ El kell indítani a dev szervert.
 npm run dev
 ```
 
+A QR code működéséhez telepíteni kell a qr code olvasót.
+```bash
+npm install vue3-qrcode-reader
+```
+
+
 ### Adatbázis: táblák, kapcsolatok
 
 ![Alt text](https://cdn.discordapp.com/attachments/1020223836802793503/1107666739753406464/Vizsgaremek_1.png)
