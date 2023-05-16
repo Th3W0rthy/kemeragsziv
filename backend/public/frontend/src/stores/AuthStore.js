@@ -1,13 +1,14 @@
 import { defineStore } from 'pinia';
 import axios from 'axios';
 
-export const useAuthStore = defineStore({
-  id: 'auth',
-  state: () => ({
-    currentUser: null,
+export const useAuthStore = defineStore('auth',{
+  state(){
+    return{
+    currentUser:"",
     isAuthenticated: false,
     token:localStorage.getItem("token"),
-  }),
+        } 
+  },
   actions: {
     async register(userdata) {
       try {
