@@ -1,8 +1,8 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createMemoryHistory, createRouter, createWebHistory } from 'vue-router'
 import { setTitle } from '@/router/guards/SetTitleGuard.mjs'
 // import Flights from '../pages/Flights.vue'
 export const router = createRouter({
-  history: createWebHistory(),
+  history: createMemoryHistory(),
   routes: [
     {
       path: '/flights',

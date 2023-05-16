@@ -35,6 +35,11 @@
             <li class="nav-item">
               <router-link class="nav-link" to="/register" >Register</router-link>
             </li>
+            <li>
+            <div v-if="auth.isLoggedIn">
+              <span class="navbar-text">Helló !</span>
+            </div>
+            </li>
           </ul>
         </div>
       </div>
@@ -45,7 +50,9 @@
 <script setup>
 import {RouterLink} from 'vue-router'
 import logo from "@/assets/img/logo.png";
+import { useAuthStore } from '@/stores/AuthStore.js';
 function onChange(locale){
     localStorage.setItem('locale',locale);
 }
+const auth = useAuthStore();
 </script>

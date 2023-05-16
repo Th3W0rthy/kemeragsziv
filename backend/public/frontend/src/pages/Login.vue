@@ -23,6 +23,7 @@
 import { useAuthStore } from '@/stores/AuthStore.js';
 import * as yup from 'yup';
 import {Form as VFrom, Field, ErrorMessage} from  "vee-validate";
+import { useRouter } from 'vue-router';
 
 const authStore = useAuthStore();
 
